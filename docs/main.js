@@ -10,7 +10,7 @@ import background from "./assets/background-02.jpg"
 
 import post_1 from "./assets/header/post-1.jpg"
 
-const post_1_desc = "当你看到这篇文章时，即代表你的RecomEcho已经安装成功！";
+const post_1_desc = "当你看到这篇文章时，即代表你的ReomEcho已经安装成功！";
 
 export default {
     header: { /**（头部） */
@@ -41,8 +41,8 @@ export default {
          * footer_copyright: 网站底部相关信息（可用HTML） Type: String
          */
         footer_name: "RecomEcho",
-        footer_link: "https://https://github.com/yichen9247/RecomEcho",
-        footer_copyright: "Copyright © 2023 - 2024 <a href=\'https://https://github.com/yichen9247/RecomEcho\'>RecomEcho</a>"
+        footer_link: "https://https://github.com/yichen9247/ReomEcho",
+        footer_copyright: "Copyright © 2023 - 2024 <a href=\'https://https://github.com/yichen9247/ReomEcho\'>ReomEcho</a>"
     },
     post: { /**（文章） */
         /**
@@ -155,7 +155,7 @@ export default {
         asode_gitbuttons: true,
         sponsor_image: weixinpay,
         aboutme_hitokoto: "你好，欢迎来看我呀！",
-        gitbuttons_hrefs: "https://github.com/yichen9247/RecomEcho"
+        gitbuttons_hrefs: "https://github.com/yichen9247/ReomEcho"
     },
     drawer: { /**（手机端左侧边栏） */
         /**
@@ -220,7 +220,7 @@ export default {
          * 
          * { name: "name", desc: 'desc', image: '', href: "/", target: "_blank" },
          */
-        { name: "RecomEcho", desc: "一款基于Vue3编写的轻量级博客框架", image: avatar, href: "https://github.com/yichen9247/RecomEcho", target: "_blank" },
+        { name: "ReomEcho", desc: "一款基于Vue3编写的轻量级博客框架", image: avatar, href: "https://github.com/yichen9247/ReomEcho", target: "_blank" },
     ],
     carousel: [ /**（轮播图列表） */
         /**
