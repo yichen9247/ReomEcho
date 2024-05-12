@@ -6,7 +6,6 @@
   import { RouterView } from 'vue-router'
   import siteConfig from "../docs/main.js"
   import isMobile from "@/scripts/mobile.js"
-  import { ElNotification } from 'element-plus'
   import { Bell } from '@element-plus/icons-vue'
 
   document.body.style.setProperty('--dominColor',siteConfig.style.site_dominColor);
@@ -18,7 +17,7 @@
     if (siteConfig.global.cook_notice) {
       if (Cookies.get('policy') !== 'true' && isMobile.isMobile()) {
         await showDialog({ message: siteConfig.global.cookie_mb_message, theme: 'round-button', confirmButtonText: "允许存储"}).then(() => Cookies.set('policy', true ,{ expires: 30 }));
-      } else 
+      }
       if (Cookies.get('policy') !== 'true' && !isMobile.isMobile()) {
           Cookies.set('policy', true ,{ expires: 30 });
           ElNotification({ icon: Bell,duration: 3000,title: '协议提醒助手',position: 'bottom-right',dangerouslyUseHTMLString: true,message: siteConfig.global.cookie_pc_message });
