@@ -1,0 +1,65 @@
+ul.friends-list {
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, 200px);
+}
+ul.friends-list li.friends-item {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  margin-bottom: 35px;
+  transition: width 0.5s;
+  border: 1px solid var(--borderd-color);
+}
+ul.friends-list li.friends-item a.item-link {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  position: relative;
+  display: inline-block;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--buttoColor);
+}
+ul.friends-list li.friends-item a.item-link div.item-desc {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  padding: 8px 16px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+ul.friends-list li.friends-item a.item-link div.item-desc div.text-sheet {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+}
+ul.friends-list li.friends-item a.item-link div.item-desc div.text-sheet p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+ul.friends-list li.friends-item a.item-link div.item-desc div.text-sheet p.name-text {
+  font-size: 1rem;
+  margin-bottom: 0!important;
+}
+ul.friends-list li.friends-item a.item-link div.item-desc div.text-sheet p.desc-text {
+  font-size: 0.75rem;
+}
+ul.friends-list li.friends-item a.item-link:hover {
+  background-size: 120%;
+}
+@media (max-width: 768px) {
+  ul.friends-list {
+    display: flex;
+    flex-direction: column;
+  }
+  ul.friends-list li.friends-item {
+    width: 100%;
+  }
+}

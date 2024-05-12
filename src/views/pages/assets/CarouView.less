@@ -1,0 +1,77 @@
+
+@borderd-color: var(--borderd-color);
+
+div.carousel-chart {
+    width: 100%;
+    height: 155px;
+    margin: 35px 0;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid @borderd-color;
+    animation: slide-in 0.6s 0.3s backwards;
+
+    * {
+        box-sizing: unset;
+    }
+
+    a.carousel-item {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: hidden;
+        border-radius: 8px;
+        padding: 0!important;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        img.carousel-item-image {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            object-fit: cover;
+            border-radius: 5px;
+            position: absolute;
+            margin: 0!important;
+        }
+
+        div.carousel-item-cover {
+            width: 100%;
+            height: 65%;
+            text-align: center;
+            position: relative;
+            // background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
+
+            p.item-title {
+                color: #ffffff;
+                font-weight: 700;
+                font-size: 1.75rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 黑色阴影 */ 
+            }
+        }
+    }
+}
+
+.carousel-swipe  {
+    a.carousel-item {
+        border-radius: unset!important;
+
+        img.carousel-item-image {
+            border-radius: unset!important;
+        }
+
+        div.carousel-item-cover {
+            padding: 0 10px;
+            height: 100%!important;
+            width: calc(100% - 20px)!important;
+
+            p.item-title {
+                width: 100%;
+                height: 100%;
+                font-size: 1.45rem!important;
+                font-weight: unset!important;
+            }
+        }
+    }
+    
+}

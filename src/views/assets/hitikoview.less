@@ -1,0 +1,116 @@
+
+div.hitokoto-box {
+    width: 580px;
+    padding: 1rem;
+    max-width: 720px;
+    overflow: hidden;
+    line-height: 2rem;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 1.25rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 黑色阴影 */ 
+}
+
+div.hitokoto-box {
+    letter-spacing: 0;
+    line-height: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    p {
+        font-weight: 700;
+        overflow: hidden;
+        text-align: center;
+        white-space: nowrap;
+        transition: color .4s;
+
+        p.desctext {
+            margin: 0 8px;
+            font-size: 1rem;
+            color: #eaeadf;
+            display: inline;
+            overflow: hidden;
+            user-select: none;
+            white-space: normal;
+            text-overflow: clip;
+            word-break: keep-all;
+        }
+
+        svg.iconify {
+            width: 1em;
+            height: 1em;
+            top: -0.125em;
+            font-size: 1rem;
+            font-weight: 700;
+            font-style: italic;
+            position: relative;
+            white-space: normal;
+            display: inline-block;
+            vertical-align: middle;
+
+            path {
+                fill: #eaeadf;
+            }
+        }
+    }
+
+    div.top-social {
+        display: flex;
+        height: 1.625rem;
+        margin-top: 1rem;
+        list-style: none;
+        position: relative;
+        margin-bottom: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        div.side {
+            height: 100%;
+            
+            svg {
+                margin: auto;
+            }
+        }
+
+        div.left-side {
+            left: 10px;
+            position: absolute;
+        }
+
+        div.right-side {
+            right: 10px;
+            position: absolute;
+        }
+
+        ul.social-list {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            li.icon-box {
+                width: 30px;
+                height: 30px;
+                display: flex;
+                cursor: pointer;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                    margin: auto; 
+                }
+            }
+
+            div.el-space__item:last-child {
+                margin-right: 0!important;
+            }
+
+            button.social-button {
+                height: 30px;
+
+                span {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}

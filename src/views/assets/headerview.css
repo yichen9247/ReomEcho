@@ -1,0 +1,195 @@
+header#site-header {
+  width: 100%;
+  z-index: 10;
+  height: 75px;
+  position: fixed;
+  background-color: transparent;
+  transition: background-color 1s;
+  border-bottom: 1px solid transparent;
+}
+header#site-header div.header-inner {
+  width: 98%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+header#site-header div.header-inner span.site-title {
+  display: none;
+  margin: 0 auto;
+  font-size: 1.35rem;
+  color: var(--dominColor);
+}
+header#site-header div.header-inner button.mobile-button {
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: none;
+  position: absolute;
+  border: none!important;
+  background-color: transparent;
+}
+header#site-header div.header-inner button.mobile-left-button {
+  left: 10px;
+}
+header#site-header div.header-inner button.mobile-button i.el-icon {
+  margin: auto;
+  width: 24px!important;
+  height: 24px!important;
+}
+header#site-header div.header-inner button.mobile-button i.el-icon svg {
+  width: 100%;
+  height: 100%;
+}
+header#site-header div.header-inner button.mobile-button i.el-icon svg path {
+  fill: var(--buttoColor);
+}
+header#site-header div.header-inner a.image-link {
+  width: 48px;
+  height: 48px;
+  margin: 0 10px;
+}
+header#site-header div.header-inner a.image-link img.avatar-icon {
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  transition: 1s;
+  margin: auto 0;
+  border-radius: 3px;
+  border: 1px dashed transparent;
+}
+header#site-header div.header-inner div.right-button {
+  right: 10px;
+  opacity: 0.6;
+  display: flex;
+  position: absolute;
+  transition: opacity 0.5s;
+}
+header#site-header div.header-inner div.right-button div.icon-box {
+  display: flex;
+  cursor: pointer;
+  margin-left: 32px;
+}
+header#site-header div.header-inner div.right-button div.icon-box svg {
+  margin: auto;
+}
+header#site-header div.header-inner div.right-button div.el-space {
+  margin-top: 5px;
+  margin-bottom: 0!important;
+}
+header#site-header div.header-inner div.right-button div.el-space div.el-space__item {
+  padding-bottom: 0!important;
+}
+header#site-header div.header-inner nav.center-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header#site-header div.header-inner nav.center-nav {
+  left: 50%;
+  right: 50%;
+  opacity: 0;
+  height: 100%;
+  min-width: 20%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+header#site-header div.header-inner nav.center-nav ul.navlist {
+  width: auto;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header#site-header div.header-inner nav.center-nav ul.navlist li.navlist-item {
+  width: 100px;
+  border-radius: 40%;
+  background-color: transparent;
+  transition: background-color 1s;
+}
+header#site-header div.header-inner nav.center-nav ul.navlist li.navlist-item a.item-link {
+  height: 45px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+header#site-header div.header-inner nav.center-nav ul.navlist li.navlist-item a.item-link span.link-text {
+  line-height: 65px;
+  font-size: 1.35rem;
+  color: var(--dominColor);
+  transition: color 1s;
+}
+header#site-header div.header-inner nav.center-nav ul.navlist li.navlist-item:hover a.item-link {
+  background-color: var(--buttoColor);
+}
+header#site-header div.header-inner nav.center-nav ul.navlist li.navlist-item:hover a.item-link span.link-text {
+  color: #FFFFFF;
+}
+header#site-header:hover {
+  background-color: var(--backard-color);
+  border-bottom: 1px solid transparent;
+}
+header#site-header:hover div.header-inner span.site-title {
+  opacity: 1;
+}
+header#site-header:hover div.header-inner a.image-link img.avatar-icon {
+  opacity: 1;
+  border: 1px dashed var(--dominColor);
+}
+header#site-header:hover div.header-inner nav.center-nav,
+header#site-header:hover div.header-inner div.right-button {
+  opacity: 1;
+}
+header#site-header.active {
+  background-color: var(--backard-color);
+  border-bottom: 1px solid transparent;
+}
+header#site-header.active div.header-inner span.site-title {
+  opacity: 1;
+}
+header#site-header.active div.header-inner a.image-link img.avatar-icon {
+  opacity: 1;
+  border: 1px dashed var(--dominColor);
+}
+header#site-header.active div.header-inner nav.center-nav {
+  opacity: 1;
+}
+header#site-header.h-show {
+  position: fixed;
+  background-color: var(--backard-color);
+}
+header#site-header.h-show div.header-inner span.site-title {
+  opacity: 1;
+}
+header#site-header.h-show div.header-inner a.image-link img.avatar-icon {
+  opacity: 1;
+  border: 1px dashed var(--dominColor);
+}
+header#site-header.h-show div.header-inner nav.center-nav {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  header#site-header {
+    height: 55px;
+    background-color: var(--backard-color) !important;
+  }
+  header#site-header div.header-inner span.site-title {
+    opacity: 0;
+    display: block;
+  }
+  header#site-header div.header-inner button.mobile-button {
+    display: flex;
+  }
+  header#site-header div.header-inner nav.center-nav,
+  header#site-header div.header-inner div.right-button,
+  header#site-header div.header-inner a.image-link {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  header#site-header div.header-inner span.site-title {
+    opacity: 1;
+    display: block;
+  }
+}

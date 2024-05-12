@@ -1,0 +1,16 @@
+{
+    "name": "ReomEcho",
+    "version": "1.1.2",
+    "description": "一款基于Vue3编写的轻量级博客框架，旨在使用简洁的文档语言来编写博客文章。",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "yichen9247",
+    "license": "ISC",
+    "dependencies": {
+        "fs-extra": "^11.2.0",
+        "mysql": "^2.18.1",
+        "ws": "^8.15.1"
+    }
+}

@@ -1,0 +1,100 @@
+div.hitokoto-box {
+  width: 580px;
+  padding: 1rem;
+  max-width: 720px;
+  overflow: hidden;
+  line-height: 2rem;
+  position: relative;
+  border-radius: 10px;
+  margin-top: 1.25rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* 黑色阴影 */
+}
+div.hitokoto-box {
+  letter-spacing: 0;
+  line-height: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+div.hitokoto-box p {
+  font-weight: 700;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  transition: color 0.4s;
+}
+div.hitokoto-box p p.desctext {
+  margin: 0 8px;
+  font-size: 1rem;
+  color: #eaeadf;
+  display: inline;
+  overflow: hidden;
+  user-select: none;
+  white-space: normal;
+  text-overflow: clip;
+  word-break: keep-all;
+}
+div.hitokoto-box p svg.iconify {
+  width: 1em;
+  height: 1em;
+  top: -0.125em;
+  font-size: 1rem;
+  font-weight: 700;
+  font-style: italic;
+  position: relative;
+  white-space: normal;
+  display: inline-block;
+  vertical-align: middle;
+}
+div.hitokoto-box p svg.iconify path {
+  fill: #eaeadf;
+}
+div.hitokoto-box div.top-social {
+  display: flex;
+  height: 1.625rem;
+  margin-top: 1rem;
+  list-style: none;
+  position: relative;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+div.hitokoto-box div.top-social div.side {
+  height: 100%;
+}
+div.hitokoto-box div.top-social div.side svg {
+  margin: auto;
+}
+div.hitokoto-box div.top-social div.left-side {
+  left: 10px;
+  position: absolute;
+}
+div.hitokoto-box div.top-social div.right-side {
+  right: 10px;
+  position: absolute;
+}
+div.hitokoto-box div.top-social ul.social-list {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.hitokoto-box div.top-social ul.social-list li.icon-box {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  cursor: pointer;
+}
+div.hitokoto-box div.top-social ul.social-list li.icon-box svg {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+div.hitokoto-box div.top-social ul.social-list div.el-space__item:last-child {
+  margin-right: 0!important;
+}
+div.hitokoto-box div.top-social ul.social-list button.social-button {
+  height: 30px;
+}
+div.hitokoto-box div.top-social ul.social-list button.social-button span {
+  color: #ffffff;
+}

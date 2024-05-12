@@ -1,0 +1,88 @@
+ul.project-list {
+  width: 100%;
+  display: grid;
+  min-height: 250px;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, 400px);
+}
+ul.project-list li.project-item {
+  width: 400px;
+  height: 200px;
+  padding: 15px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  margin-bottom: 35px;
+  transition: width 0.5s;
+  border: 1px solid var(--borderd-color);
+}
+ul.project-list li.project-item a.project-link {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 0!important;
+}
+ul.project-list li.project-item a.project-link p.project-name {
+  width: 100%;
+  font-size: 24px;
+  overflow: hidden;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 0!important;
+}
+ul.project-list li.project-item a.project-link div.project-info {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul.project-list li.project-item a.project-link div.project-info i.project-icon {
+  width: 16px;
+  height: 16px;
+  margin: 0 5px;
+  display: flex;
+}
+ul.project-list li.project-item a.project-link div.project-info i.project-icon svg {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+ul.project-list li.project-item a.project-link div.project-info span.info-text {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 16px;
+}
+ul.project-list li.project-item a.project-link p.project-desc {
+  width: 100%;
+  margin: 35px 0;
+  font-size: 13px;
+  overflow: hidden;
+  color: #ffffff;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  margin-bottom: 0!important;
+}
+ul.project-list li.project-item a.project-link div.project-language {
+  right: 20px;
+  bottom: 10px;
+  font-size: 20px;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.5);
+}
+ul.project-list:has(div.have-no-data) {
+  display: block;
+}
+@media (max-width: 768px) {
+  ul.project-list {
+    display: flex;
+    flex-direction: column;
+  }
+  ul.project-list li.project-item {
+    width: 100%;
+  }
+}

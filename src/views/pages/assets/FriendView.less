@@ -1,0 +1,79 @@
+
+@butto-color: var(--buttoColor);
+@borderd-color: var(--borderd-color);
+
+ul.friends-list {
+    width: 100%;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, 200px);
+
+    li.friends-item {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 8px;
+        margin-bottom: 35px;
+        transition: width 0.5s;
+        border: 1px solid @borderd-color;
+
+        a.item-link {
+            width: 100%;
+            height: 100%;
+            transition: 0.5s;
+            position: relative;
+            display: inline-block;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: @butto-color;
+
+            div.item-desc {
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 64px;
+                padding: 8px 16px;
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.3);
+
+                div.text-sheet {
+                    width: 100%;
+                    height: 100%;
+                    color: #ffffff;
+
+                    p {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+
+                    p.name-text {
+                        font-size: 1rem;
+                        margin-bottom: 0!important;
+                    }
+
+                    p.desc-text {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+
+            &:hover {
+                background-size: 120%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    ul.friends-list {
+        display: flex;
+        flex-direction: column;
+
+        li.friends-item {
+            width: 100%;
+        }
+    }
+}
