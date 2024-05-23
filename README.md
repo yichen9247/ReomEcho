@@ -16,7 +16,7 @@
     <img src="https://img.shields.io/github/forks/yichen9247/ReomEcho.svg" alt="GitHub forks"/>
   </a>
   </a>
-  <a href="https://github.com/yichen9247/ReomEcho/LICENSE" style="text-decoration:none">
+  <a href="hhttps://github.com/yichen9247/ReomEcho/blob/main/LICENSE.txt" style="text-decoration:none">
     <img src="https://img.shields.io/github/license/yichen9247/ReomEcho" alt="GitHub License"/>
   </a>
 </p>
