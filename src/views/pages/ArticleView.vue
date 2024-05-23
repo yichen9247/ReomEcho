@@ -1,21 +1,21 @@
 <script setup>
     import Cookies from "js-cookie"
+    import { useRoute } from "vue-router"
+    import utils from "@/scripts/utils.js"
     import { ref, onMounted, watch } from 'vue'
     import "@/views/pages/assets/ArticleView.css"
     import siteConfig from "../../../docs/main.js"
-    import footerview from "@/views/footerview.vue"
-    import headerview from "@/views/headerview.vue"
-    import { useRoute, useRouter } from "vue-router"
+    import { onBeforeRouteLeave } from 'vue-router'
     import renderMarkdown from "@/scripts/markdown.js"
     import NotFounds from '@/views/pages/NotFounds.vue'
     import vueQr from 'vue-qr/src/packages/vue-qr.vue'
     import ArticleFoot from "@/views/pages/ArticleFoot.vue"
     import CommentView from "@/views/widgets/CommentView.vue"
     import { useReomEchoStore } from "@/stores/ReomEchoStore.js"
+    import { usePostsEchoStore } from "@/stores/PostsEchoStore.js"
 
     const postWords = ref(0);
     const route = useRoute();
-    const router = useRouter();
     const htmlContent = ref('');
     const showShare = ref(false);
     const showDraws = ref(false);
@@ -23,20 +23,8 @@
     const config = ref(route.meta.config);
     const locationHref = ref(location.href);
     const ReomEchoStore = useReomEchoStore();
-    const filePath = '../../../docs/' + config.value.path + '/README.md';
-
-    const checkSiteHref = async () => {
-        let links = document.getElementsByTagName('a');  
-        for (var i = 0; i < links.length; i++) {
-            if (links[i].href.includes(location.host)) {
-                links[i].addEventListener('click',async function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    await router.push(new URL(this.href).pathname);
-                });
-            }
-        };
-    }
+    const PostsEchoStore = usePostsEchoStore();
+    let filePath = '../../../docs/' + config.value.path + '/README.md';
 
     /**
      * Markdown渲染的图片灯箱效果
@@ -63,6 +51,7 @@
         if (config.value.path !== false) {
             htmlContent.value = await renderMarkdown(data);
         }
+        
         postWords.value = data.length;
     }
 
@@ -71,7 +60,7 @@
         await showToast('正在开发中');
     };
 
-    router.beforeEach(async (to, from, next) => {
+    onBeforeRouteLeave(async (to, from, next) => {
         next();
         setTimeout(() => {
             try{
@@ -101,11 +90,7 @@
         }
 
         if (option.id == 'link') {
-            await navigator.clipboard.writeText(location.href).then(
-                async() => {
-                    await showToast('复制链接成功');
-                },(err) => showToast('复制链接失败')
-            );
+            utils.writeClipBoardLink();
         }
 
         if (option.id == 'poster') {
@@ -117,28 +102,29 @@
         }
     }
 
-    onMounted(async () => {
+    const letGetPostData = async () => {
         try {
             await fetch(filePath)
             .then(response => response.text())
             .then(data => toRenderMarkdown(data))
             .catch(error => {});
-            checkSiteHref();
             setTimeout(() => checkImageClick(),1000);
         } catch (e) {
             location.reload();
         }
-    });
-    
-    const shareOptions = [
-        { id: 'wechat', name: '微信', icon: 'wechat' },
-        { id: 'weibo', name: '微博', icon: 'weibo' },
-        { id: 'link', name: '复制链接', icon: 'link' },
-        { id: 'poster', name: '分享海报', icon: 'poster' },
-        { id: 'qrcode', name: '二维码', icon: 'qrcode' },
-    ];
+    }
 
-    watch(config,(newValue,oldValue) => {
+    onMounted(async () => {
+        await Promise.all([
+            await ReomEchoStore.setIsSiLodingStatus(true), 
+            await letGetPostData(),
+            await ReomEchoStore.setIsHeaderBarShows(true)
+        ]).then(async () => {
+            await ReomEchoStore.setIsSiLodingStatus(false);
+        });
+    });
+
+    watch(config,async (newValue,oldValue) => {
         document.title = config.value.name + ' - ' + siteConfig.global.site_title;
     });
     document.title = config.value.name + ' - ' + siteConfig.global.site_title;
@@ -146,7 +132,6 @@
 
 <template>
     <div id="profile" :style="{ animation: 'article 1s' }" v-if="config.path !== false" :data-theme="Cookies.get('darkTheme') !== 'true' ? 'default' : 'dark'">
-        <headerview class="active"/>
         <div id="article-head">
             <img class="cover-bg" v-lazy="config.image"/>
             <h1 class="cover-title">{{ config.name }}</h1>
@@ -170,25 +155,18 @@
                         </span>
 
                         <span class="tag" @click="showShare = true" v-if="ReomEchoStore.isDeviceMobilePhone && siteConfig.post.post_sharebtn">
-                            <span class="tag-text">分享作品</span>
+                            <span class="tag-text">分享文章</span>
                         </span>
                     </van-space>
                 </div>
                 <ArticleFoot v-if="siteConfig.post.post_copyright" :config="config"/>
-                <CommentView/>
-                <footerview />
+                <CommentView v-if="siteConfig.comment.comment_glba && config.comment"/>
             </div>
         </div>
-        <van-back-top v-if="siteConfig.global.backtop_button"/>
     </div>
     
-    <van-overlay :show="ReomEchoStore.imageLightBoxSta" @click="ReomEchoStore.setImageLightBoxSta(false)">
-        <div class="wrapper">
-            <img :src="ReomEchoStore.imageLightBoxSrc">
-        </div>
-    </van-overlay>
     <NotFounds v-if="config.path === false"/>
-    <van-share-sheet v-model:show="showShare" title="立即分享给好友" :options="shareOptions" @select="shareSelect" v-if="ReomEchoStore.isDeviceMobilePhone" />
+    <van-share-sheet v-model:show="showShare" title="立即分享给好友" :options="PostsEchoStore.postShare" @select="shareSelect" v-if="ReomEchoStore.isDeviceMobilePhone" />
     <van-popup v-if="ReomEchoStore.isDeviceMobilePhone" v-model:show="showQrcod" round position="bottom" :style="{ height: 'auto', padding: '15px' }" teleport="body">
         <vue-qr class="qrcode" :text="locationHref" :size="200" :autoColor="true" :colorDark="siteConfig.style.po_qrcode_color"></vue-qr>
     </van-popup>

@@ -3,13 +3,14 @@ div#article-head {
   height: 400px;
   display: flex;
   overflow: hidden;
-  padding-top: 75px;
+  margin-top: 75px;
   position: relative;
 }
 div#article-head img.cover-bg {
   width: 100%;
   height: 100%;
   position: absolute;
+  filter: brightness(0.8) contrast(1.2);
 }
 div#article-head h1.cover-title {
   margin: auto;
@@ -23,9 +24,6 @@ div#article-head h1.cover-title {
   letter-spacing: 3px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  /* 黑色阴影 */
-  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei";
 }
 div#post-tages {
   width: 100%;
@@ -80,14 +78,15 @@ p > img.post-block-image {
   width: 100%;
   cursor: pointer;
   transition: 0.5s;
+  object-fit: cover;
   position: relative;
   border-radius: 5px;
-  object-fit: cover;
 }
 @media (max-width: 768px) {
   div#article-head {
     height: 300px;
     padding-top: 55px;
+    margin-top: unset;
   }
   div#article-head h1.cover-title {
     font-size: 2.75rem;
@@ -101,6 +100,7 @@ p > img.post-block-image {
   div#article-head {
     height: 300px;
     padding-top: 55px;
+    margin-top: unset;
   }
   div#article-head h1.cover-title {
     font-size: 1.75rem;
@@ -110,6 +110,7 @@ p > img.post-block-image {
   div#article-head {
     height: 300px;
     padding-top: 55px;
+    margin-top: unset;
   }
   div#article-head h1.cover-title {
     font-size: 0.75rem;

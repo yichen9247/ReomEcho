@@ -4,8 +4,8 @@ header#site-header {
   height: 75px;
   position: fixed;
   background-color: transparent;
-  transition: background-color 1s;
   border-bottom: 1px solid transparent;
+  transition: background-color var(--transition);
 }
 header#site-header div.header-inner {
   width: 98%;
@@ -15,7 +15,7 @@ header#site-header div.header-inner {
   position: relative;
   align-items: center;
 }
-header#site-header div.header-inner span.site-title {
+header#site-header div.header-inner a.site-title {
   display: none;
   margin: 0 auto;
   font-size: 1.35rem;
@@ -51,20 +51,24 @@ header#site-header div.header-inner a.image-link {
   margin: 0 10px;
 }
 header#site-header div.header-inner a.image-link img.avatar-icon {
+  opacity: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.6;
-  transition: 1s;
   margin: auto 0;
   border-radius: 3px;
+  transition: var(--transition);
   border: 1px dashed transparent;
+}
+header#site-header div.header-inner a.link-name {
+  opacity: 0;
+  font-size: 24px;
+  color: var(--dominColor);
+  transition: var(--transition);
 }
 header#site-header div.header-inner div.right-button {
   right: 10px;
-  opacity: 0.6;
   display: flex;
   position: absolute;
-  transition: opacity 0.5s;
 }
 header#site-header div.header-inner div.right-button div.icon-box {
   display: flex;
@@ -72,7 +76,9 @@ header#site-header div.header-inner div.right-button div.icon-box {
   margin-left: 32px;
 }
 header#site-header div.header-inner div.right-button div.icon-box svg {
+  opacity: 0;
   margin: auto;
+  transition: opacity var(--transition);
 }
 header#site-header div.header-inner div.right-button div.el-space {
   margin-top: 5px;
@@ -106,7 +112,7 @@ header#site-header div.header-inner nav.center-nav ul.navlist li.navlist-item {
   width: 100px;
   border-radius: 40%;
   background-color: transparent;
-  transition: background-color 1s;
+  transition: background-color var(--transition);
 }
 header#site-header div.header-inner nav.center-nav ul.navlist li.navlist-item a.item-link {
   height: 45px;
@@ -118,7 +124,7 @@ header#site-header div.header-inner nav.center-nav ul.navlist li.navlist-item a.
   line-height: 65px;
   font-size: 1.35rem;
   color: var(--dominColor);
-  transition: color 1s;
+  transition: color var(--transition);
 }
 header#site-header div.header-inner nav.center-nav ul.navlist li.navlist-item:hover a.item-link {
   background-color: var(--buttoColor);
@@ -130,28 +136,31 @@ header#site-header:hover {
   background-color: var(--backard-color);
   border-bottom: 1px solid transparent;
 }
-header#site-header:hover div.header-inner span.site-title {
-  opacity: 1;
-}
 header#site-header:hover div.header-inner a.image-link img.avatar-icon {
   opacity: 1;
   border: 1px dashed var(--dominColor);
 }
-header#site-header:hover div.header-inner nav.center-nav,
-header#site-header:hover div.header-inner div.right-button {
+header#site-header:hover div.header-inner div.right-button div.icon-box svg {
+  opacity: 1;
+}
+header#site-header:hover div.header-inner span.site-title,
+header#site-header:hover div.header-inner a.link-name,
+header#site-header:hover div.header-inner nav.center-nav {
   opacity: 1;
 }
 header#site-header.active {
   background-color: var(--backard-color);
   border-bottom: 1px solid transparent;
 }
-header#site-header.active div.header-inner span.site-title {
-  opacity: 1;
-}
 header#site-header.active div.header-inner a.image-link img.avatar-icon {
   opacity: 1;
   border: 1px dashed var(--dominColor);
 }
+header#site-header.active div.header-inner div.right-button div.icon-box svg {
+  opacity: 1;
+}
+header#site-header.active div.header-inner span.site-title,
+header#site-header.active div.header-inner a.link-name,
 header#site-header.active div.header-inner nav.center-nav {
   opacity: 1;
 }
@@ -159,13 +168,15 @@ header#site-header.h-show {
   position: fixed;
   background-color: var(--backard-color);
 }
-header#site-header.h-show div.header-inner span.site-title {
-  opacity: 1;
-}
 header#site-header.h-show div.header-inner a.image-link img.avatar-icon {
   opacity: 1;
   border: 1px dashed var(--dominColor);
 }
+header#site-header.h-show div.header-inner div.right-button div.icon-box svg {
+  opacity: 1;
+}
+header#site-header.h-show div.header-inner span.site-title,
+header#site-header.h-show div.header-inner a.link-name,
 header#site-header.h-show div.header-inner nav.center-nav {
   opacity: 1;
 }
@@ -174,7 +185,7 @@ header#site-header.h-show div.header-inner nav.center-nav {
     height: 55px;
     background-color: var(--backard-color) !important;
   }
-  header#site-header div.header-inner span.site-title {
+  header#site-header div.header-inner a.site-title {
     opacity: 0;
     display: block;
   }
@@ -183,12 +194,13 @@ header#site-header.h-show div.header-inner nav.center-nav {
   }
   header#site-header div.header-inner nav.center-nav,
   header#site-header div.header-inner div.right-button,
-  header#site-header div.header-inner a.image-link {
+  header#site-header div.header-inner a.image-link,
+  header#site-header div.header-inner a.link-name {
     display: none;
   }
 }
 @media (max-width: 480px) {
-  header#site-header div.header-inner span.site-title {
+  header#site-header div.header-inner a.site-title {
     opacity: 1;
     display: block;
   }

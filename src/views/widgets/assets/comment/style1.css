@@ -1,0 +1,13 @@
+#veditor {
+  opacity: 0.75;
+  resize: vertical;
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0);
+  background-image: url("assets/comment1.png");
+}
+#veditor:focus {
+  background-position-y: 200px;
+  transition: all var(--transition) ease-in-out 0s;
+}

@@ -1,36 +1,23 @@
 <script setup>
     import Cookies from "js-cookie"
+    import { useRoute } from 'vue-router'
     import { ref, onMounted, watch } from 'vue'
+    import LeaveView from "@/pages/LeaveView.vue"
+    import AboutView from "@/pages/AboutView.vue"
     import "@/views/pages/assets/ArticleView.css"
-    import headerview from "@/views/headerview.vue"
     import siteConfig from "../../../docs/main.js"
-    import footerview from "@/views/footerview.vue"
-    import { useRoute, useRouter } from 'vue-router'
+    import { onBeforeRouteLeave } from 'vue-router'
+    import FriendView from "@/pages/FriendView.vue"
+    import ProjecView from "@/pages/ProjecView.vue"
     import renderMarkdown from "@/scripts/markdown.js"
-    import FriendView from '@/views/pages/FriendView.vue'
-    import ProjecView from '@/views/pages/ProjecView.vue'
+    import CommentView from "@/views/widgets/CommentView.vue"
     import { useReomEchoStore } from "@/stores/ReomEchoStore.js"
 
     const route = useRoute();
-    const router = useRouter();
-    const loading = ref(false);
     const htmlContent = ref('');
     const config = ref(route.meta.config);
     const ReomEchoStore = useReomEchoStore();
-    const filePath = '../../../docs/' + config.value.path + '/README.md';
-
-    const checkSiteHref = async () => {
-        let links = document.getElementsByTagName('a');  
-        for (var i = 0; i < links.length; i++) {
-            if (links[i].href.includes(location.host)) {
-                links[i].addEventListener('click',async function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    await router.push(new URL(this.href).pathname);
-                });
-            }
-        };
-    }
+    let filePath = '../../../docs/' + config.value.path + '/README.md';
 
     /**
      * Markdown渲染的图片灯箱效果
@@ -54,20 +41,13 @@
         };
     }
 
-    const onRefresh = async () => {
-        setTimeout(() => {
-            showToast('刷新成功');
-            loading.value = false;
-        }, 1000);
-    };
-
     const toRenderMarkdown = async (data) => {
         if (config.path !== false) {
-             htmlContent.value = await renderMarkdown(data);
+            htmlContent.value = await renderMarkdown(data);
         }
     }
 
-    router.beforeEach((to, from, next) => {
+    onBeforeRouteLeave(async (to, from, next) => {
         next();
         setTimeout(() => {
             try {
@@ -85,66 +65,70 @@
             }
         },1);
     });
-    
-    onMounted(async () => {
+
+    const letGetPostData = async () => {
         if (route.meta.type === 'post') {
             try {
                 await fetch(filePath)
                 .then(response => response.text())  
                 .then(data => toRenderMarkdown(data))  
                 .catch(error => {});
-                checkSiteHref();
                 setTimeout(() => checkImageClick(),1000);
             } catch (e) {
                 location.reload();
             }
         }
+    }
+    
+    onMounted(async () => {
+        await Promise.all([
+            await ReomEchoStore.setIsSiLodingStatus(true),
+            await letGetPostData(),
+            await ReomEchoStore.setIsHeaderBarShows(true)
+        ]).then(async () => {
+            await ReomEchoStore.setIsSiLodingStatus(false);
+        });
     });
 
     document.title = config.value.name + ' - ' + siteConfig.global.site_title;
-    watch(config,(newValue,oldValue) => {
+    watch(config,async (newValue,oldValue) => {
         document.title = config.value.name + ' - ' + siteConfig.global.site_title;
-    });
+    },{deep: true});
 </script>
 
 <template>
     <div id="profile" :style="{ animation: 'article 1s' }" v-if="config.path !== false" :data-theme="Cookies.get('darkTheme') !== 'true' ? 'default' : 'dark'">
-        <headerview class="active"/>
-        <van-pull-refresh v-model="loading" @refresh="onRefresh" v-if="ReomEchoStore.isDeviceMobilePhone && siteConfig.global.index_refreshs">
-            <div id="article-head">
+        <van-pull-refresh v-model="ReomEchoStore.refreshtilStstus" @refresh="ReomEchoStore.toggleRefreshStatus" v-if="ReomEchoStore.isDeviceMobilePhone && siteConfig.global.index_refreshs">
+            <div id="article-head" v-if="config.head">
                 <img class="cover-bg" :src="config.image"/>
                 <h1 class="cover-title">{{ config.name }}</h1>
             </div>
             <div id="markdown" :class="route.meta.type === 'post' ? 'markdown-post' : 'markdown-page'">
                 <div class="markdown-body" :style="{ minHeight: '100%'  }">
                     <section id="section" v-if="route.meta.type === 'post'" v-html="htmlContent"></section>
+                    <LeaveView v-if="route.meta.type === 'feed'"/>
                     <FriendView v-if="route.meta.type === 'link'"/>
                     <ProjecView v-if="route.meta.type === 'repo'"/>
-                    <el-divider/>
-                    <footerview />
+                    <AboutView  v-if="route.meta.type === 'about'"/>
+                    <CommentView v-if="siteConfig.comment.comment_glba && config.comment"/>
                 </div>
             </div>
         </van-pull-refresh>
         <div v-else>
-            <div id="article-head">
+            <div id="article-head" v-if="config.head">
                 <img class="cover-bg" :src="config.image"/>
                 <h1 class="cover-title">{{ config.name }}</h1>
             </div>
             <div id="markdown" :class="route.meta.type === 'post' ? 'markdown-post' : 'markdown-page'">
                 <div class="markdown-body" :style="{ minHeight: '100%'  }">
                     <section id="section" v-if="route.meta.type === 'post'" v-html="htmlContent"></section>
+                    <LeaveView v-if="route.meta.type === 'feed'"/>
                     <FriendView v-if="route.meta.type === 'link'"/>
                     <ProjecView v-if="route.meta.type === 'repo'"/>
-                    <el-divider/>
-                    <footerview />
+                    <AboutView  v-if="route.meta.type === 'about'"/>
+                    <CommentView v-if="siteConfig.comment.comment_glba && config.comment"/>
                 </div>
             </div>
         </div>
-        <van-overlay :show="ReomEchoStore.imageLightBoxSta" @click="ReomEchoStore.setImageLightBoxSta(false)">
-            <div class="wrapper">
-                <img :src="ReomEchoStore.imageLightBoxSrc">
-            </div>
-        </van-overlay>
-        <van-back-top v-if="siteConfig.global.backtop_button"/>
     </div>
 </template>

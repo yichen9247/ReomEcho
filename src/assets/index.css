@@ -27,18 +27,23 @@ html {
   height: 100%;
   overflow: hidden;
 }
-:root {
-  --color-text: #2c3e50;
-}
 @font-face {
   font-family: 'AlimamaFangYuanTiVF';
   src: url('fonts/AlimamaFangYuanTiVF-Thin.woff2');
 }
 body {
   line-height: 1.6;
+  --transition: 0.3s;
   text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  font-family: "AlimamaFangYuanTiVF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif !important;
+  transition: background-color var(--transition);
+  font-family: "AlimamaFangYuanTiVF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+div#app {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 ::selection {
   color: #ffffff;
@@ -71,6 +76,9 @@ body {
 ::-webkit-scrollbar-track {
   border-radius: 10px;
   background-color: #dddddd;
+}
+button#postChat_button {
+  background-color: var(--dominColor) !important;
 }
 @media (max-width: 768px) {
   ::-webkit-scrollbar {

@@ -240,6 +240,16 @@ a.aside-github button.button {
 a.aside-github button.button svg {
   height: 30px;
 }
+span#busuanzi_container_site_pv,
+span#busuanzi_container_site_uv {
+  display: flex!important;
+  align-items: center;
+}
+span#busuanzi_container_site_pv span,
+span#busuanzi_container_site_uv span {
+  display: flex;
+  align-items: center;
+}
 img.sponsor_dialog_image {
   width: 100%;
   height: 100%;

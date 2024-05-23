@@ -11,8 +11,8 @@
   position: relative;
   margin-bottom: 20px;
   background-color: @backard-color;
-  transition: all 0.5s ease-in-out;
   border: 1px solid var(--borderd-color);
+  transition: all var(--transition) ease-in-out;
 }
 
 .card .mail {
@@ -26,6 +26,7 @@
 .card .mail svg {
   stroke: #fbb9b6;
   stroke-width: 3px;
+  transition: stroke var(--transition);
 }
 
 .card .mail svg:hover {
@@ -63,7 +64,7 @@
   object-position: 0px 0px;
   transform-origin: 45% 20%;
   -o-object-position: 0px 0px;
-  transition: all 0.5s ease-in-out 0s;
+  transition: all var(--transition) ease-in-out 0s;
 }
 
 .card .bottom {
@@ -122,7 +123,7 @@
 
 .card .bottom .bottom-bottom .social-links-container svg {
   height: 20px;
-  transition: 0.5s;
+  transition: 0.3s;
   fill: @backard-color;
   filter: drop-shadow(0 5px 5px rgba(165, 132, 130, 0.1333333333));
 }
@@ -135,11 +136,11 @@
 .card .bottom .bottom-bottom .button {
   border: none;
   cursor: pointer;
-  transition: 0.5s;
   color: #fbb9b6;
   font-size: 0.6rem;
   border-radius: 8px;
   padding: 0.4rem 0.6rem;
+  transition: var(--transition);
   background-color: @backard-color;
   box-shadow: rgba(165, 132, 130, 0.1333333333) 0px 5px 5px 0px;
 }
@@ -176,5 +177,5 @@
 
 .card:hover .profile-pic svg {
   transform: scale(2.5);
-  transition: all 0.5s ease-in-out 0.5s;
+  transition: all var(--transition) ease-in-out 0.5s;
 }

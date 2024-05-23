@@ -1,7 +1,7 @@
 
 @domin-color: var(--dominColor);
 
-div#profile {
+body {
     --filter: invert(0%);
     --linkhov-color: #c5c8cb;
     --primary-color: #f7f9fe;
@@ -16,11 +16,14 @@ div#profile {
     --tablete-color: rgba(0,0,0,0.54);
     --boxshadow: 0 8px 16px -4px #2c2d300c;
     --borderd-color: var(--el-border-color);
+    --svgfill-color: var(--el-border-color);
     --moboxsh-color: rgba(158, 158, 158, 0.22);
 }
 
-div#profile[data-theme="dark"] {
+
+body:has(div#profile[data-theme="dark"]) {
     --filter: invert(100%);
+    --svgfill-color: #f7f9fe;
     --borderd-color: rgb(25,25,25);
     --backard-color: rgb(33,33,33);
     --linkhov-color: rgb(33,33,33);
@@ -67,16 +70,14 @@ body:not(:has(div#app div#profile[data-theme="dark"])) {
 
 div#profile {
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    overflow-y: scroll;
     position: relative;
-    animation: header 1s;
+    // animation: header 1s;
+    transition: background-color var(--transition);
 
     img.cover-bg {
         z-index: -1;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         overflow: clip;
         object-fit: cover;
         position: absolute;
@@ -88,6 +89,7 @@ div#headerfile {
     height: 100vh;
     display: grid;
     overflow: hidden;
+    position: relative;
     background: url(../assets/icons/grid.png);
 }
 
@@ -160,7 +162,7 @@ div#headerfile {
         width: 400%;
         height: 95px;
         position: absolute;
-        transition: .4s ease all;
+        transition: 0.4s ease all;
 
         div.wave {
             bottom: 0;

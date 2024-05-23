@@ -17,6 +17,7 @@ div#markdown {
     height: auto;
     min-height: calc(100% - 400px);
     background-color: @primary-color;
+    transition: background-color var(--transition);
 
     div.markdown-body {
         width: 90%;
@@ -33,6 +34,8 @@ div#markdown {
     img {
         margin: 20px 0;
         max-width: 100%;
+        object-fit: cover;
+        max-height: 720px;
     }
 
     strong {
@@ -226,8 +229,8 @@ table {
     tbody {
         tr {
             position: relative;
-            transition: background-color .28s cubic-bezier(0.4,0,0.2,1);
-            -webkit-transition: background-color .28s cubic-bezier(0.4,0,0.2,1);
+            transition: background-color 0.28s cubic-bezier(0.4,0,0.2,1);
+            -webkit-transition: background-color 0.28s cubic-bezier(0.4,0,0.2,1);
 
             &:hover {
                 background-color: @tableho-color;

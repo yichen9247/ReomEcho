@@ -5,8 +5,9 @@
 @backard-color: var(--backard-color);
 
 footer#footer {
-    width: 100%;
+    width: 90%;
     height: 65px;
+    margin: 0 auto;
     margin-top: 25px;
     border-radius: 8px;
     margin-bottom: 35px;
@@ -24,12 +25,29 @@ footer#footer {
         white-space: nowrap;
         color: @domin-color;
         text-overflow: ellipsis;
-        
 
         a {
             font-size: 1rem;
             font-weight: 700;
             color: @domin-color;
         }
+    }
+}
+
+@media (max-width: 768px) {
+    footer#footer {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    footer#footer {
+        width: 95%;
+    }
+}
+
+@media (max-width: 320px) {
+    footer#footer {
+        width: 95%;
     }
 }

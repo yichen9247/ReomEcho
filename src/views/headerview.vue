@@ -3,7 +3,7 @@
     import "@/views/assets/headerview.css"
     import { ElMessage } from 'element-plus'
     import siteConfig from "../../docs/main.js"
-    import mobilhead from "@/views/mobilhead.vue"
+    import MobileHeader from "@/views/widgets/MobileHeader.vue"
     import { useReomEchoStore } from "@/stores/ReomEchoStore.js"
 
     const ReomEchoStore = useReomEchoStore();
@@ -22,13 +22,15 @@
 </script>
 
 <template>
-    <header id="site-header" :class="((!siteConfig.index.index_header) && (!ReomEchoStore.isDeviceMobilePhone)) && 'h-show'">
+    <header id="site-header" :class="(((!siteConfig.index.index_header) && (!ReomEchoStore.isDeviceMobilePhone)) || ReomEchoStore.isHeaderBarShows) && 'h-show'">
         <div class="header-inner">
             <a class="image-link" href="/" v-if="!ReomEchoStore.isDeviceMobilePhone">
                 <img class="avatar-icon" v-lazy="siteConfig.header.header_icon" :alt="siteConfig.header.header_title" draggable="false">
             </a>
 
-            <mobilhead/>
+            <a class="link-name" href="/" v-if="!ReomEchoStore.isDeviceMobilePhone">{{ siteConfig.global.site_title }}</a>
+
+            <MobileHeader v-if="ReomEchoStore.isDeviceMobilePhone"/>
 
             <nav class="center-nav" v-if="!ReomEchoStore.isDeviceMobilePhone">
                 <ul class="navlist">

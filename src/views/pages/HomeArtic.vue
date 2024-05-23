@@ -1,5 +1,4 @@
 <script setup>
-    import { useRouter } from 'vue-router'
     import { ElMessage } from 'element-plus'
     import "@/views/pages/assets/HomeArtic.css"
     import { ref, onMounted, watch } from 'vue'
@@ -7,23 +6,11 @@
     import NoData from "@/views/widgets/NoData.vue"
     import AsideView from "@/views/pages/AsideView.vue"
     import CarouView from "@/views/pages/CarouView.vue"
+    import { useReomEchoStore } from "@/stores/ReomEchoStore.js"
 
     let posts = [];
-    const router = useRouter();
+    const ReomEchoStore = useReomEchoStore();
     let links = document.getElementsByTagName('a');
-
-    const checkSiteHref = async () => {
-        let links = document.getElementsByTagName('a');  
-        for (var i = 0; i < links.length; i++) {
-            if (links[i].href.includes(location.host)) {
-                links[i].addEventListener('click',async function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    await router.push(new URL(this.href).pathname);
-                });
-            }
-        };
-    }
 
     const loadMorePost = async () => {
         if (postArray.value.length < posts.length) {
@@ -51,7 +38,7 @@
 </script>
 
 <template>
-    <CarouView/>
+    <CarouView />
     <div id="body-content">
         <div class="content-main">
             <ul :class="siteConfig.index.post_polishing ? 'post-list-default post-list polishing' : 'post-list-default post-list'" v-if="siteConfig.index.post_listmode === 0">
@@ -96,6 +83,6 @@
 
             <el-button class="load-more-button" size="large" :color="siteConfig.style.site_buttoColor" plain @click="loadMorePost" v-if="postArray.length < posts.length">加载更多</el-button>
         </div>
-        <AsideView/>
+        <AsideView v-if="!ReomEchoStore.isDeviceMobilePhone"/>
     </div>
 </template>

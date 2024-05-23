@@ -12,6 +12,10 @@ import 'highlight.js/styles/github.css'
 import siteConfig from "../../docs/main.js"
 import patternConfig from "@/scripts/mapattern.js"
 
+/**
+ * @param { * } data 
+ * @returns string
+ */
 const renderMarkdown = (data) => {
     const renderer = new marked.Renderer();
 

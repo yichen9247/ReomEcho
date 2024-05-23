@@ -1,7 +1,6 @@
 <script setup>
     import { useRouter } from 'vue-router'
     import siteConfig from "../../../docs/main.js"
-    import headerview from "@/views/headerview.vue"
     import footerview from "@/views/footerview.vue"
     document.title = "页面没找到 - " + siteConfig.global.site_title;
 
@@ -12,7 +11,6 @@
 
 <template>
     <div id="profile" :style="{ animation: 'article 1s' }">
-        <headerview class="active"/>
         <div id="article-head">
             <img class="cover-bg" :src="siteConfig.header.header_image"/>
             <h1 class="cover-title">404 页面没有找到</h1>
@@ -26,7 +24,6 @@
                     </el-space>
                 </section>
                 <el-divider/>
-                <footerview/>
             </div>
         </div>
     </div>

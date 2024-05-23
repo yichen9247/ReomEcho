@@ -1,4 +1,4 @@
-div#profile {
+body {
   --filter: invert(0%);
   --linkhov-color: #c5c8cb;
   --primary-color: #f7f9fe;
@@ -13,10 +13,12 @@ div#profile {
   --tablete-color: rgba(0, 0, 0, 0.54);
   --boxshadow: 0 8px 16px -4px #2c2d300c;
   --borderd-color: var(--el-border-color);
+  --svgfill-color: var(--el-border-color);
   --moboxsh-color: rgba(158, 158, 158, 0.22);
 }
-div#profile[data-theme="dark"] {
+body:has(div#profile[data-theme="dark"]) {
   --filter: invert(100%);
+  --svgfill-color: #f7f9fe;
   --borderd-color: #191919;
   --backard-color: #212121;
   --linkhov-color: #212121;
@@ -31,21 +33,21 @@ div#profile[data-theme="dark"] {
   --asideba-color: #ffffff;
   --moboxsh-color: rgba(158, 158, 158, 0);
 }
-div#profile[data-theme="dark"] div.el-divider--horizontal {
+body:has(div#profile[data-theme="dark"]) div.el-divider--horizontal {
   border-top: 1px solid #212121;
 }
-div#profile[data-theme="dark"] div.code-pre-block {
+body:has(div#profile[data-theme="dark"]) div.code-pre-block {
   color: #ffffff;
 }
-div#profile[data-theme="dark"] div.code-pre-block p,
-div#profile[data-theme="dark"] div.code-pre-block span {
+body:has(div#profile[data-theme="dark"]) div.code-pre-block p,
+body:has(div#profile[data-theme="dark"]) div.code-pre-block span {
   color: #ffffff;
 }
-div#profile[data-theme="dark"] section#section p,
-div#profile[data-theme="dark"] section#section span {
+body:has(div#profile[data-theme="dark"]) section#section p,
+body:has(div#profile[data-theme="dark"]) section#section span {
   color: var(--textard-color);
 }
-div#profile[data-theme="dark"] section#section li {
+body:has(div#profile[data-theme="dark"]) section#section li {
   color: var(--textard-color);
 }
 body:has(div#app div#profile[data-theme="dark"]) {
@@ -56,16 +58,13 @@ body:not(:has(div#app div#profile[data-theme="dark"])) {
 }
 div#profile {
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  overflow-y: scroll;
   position: relative;
-  animation: header 1s;
+  transition: background-color var(--transition);
 }
 div#profile img.cover-bg {
   z-index: -1;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: clip;
   object-fit: cover;
   position: absolute;
@@ -75,6 +74,7 @@ div#headerfile {
   height: 100vh;
   display: grid;
   overflow: hidden;
+  position: relative;
   background: url(../assets/icons/grid.png);
 }
 div#headerfile div.context-box {

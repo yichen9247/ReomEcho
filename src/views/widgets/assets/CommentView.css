@@ -1,0 +1,78 @@
+div.vpanel {
+  padding-top: 10px;
+}
+.vrow .status-bar {
+  color: #ff0000 !important;
+}
+.v[data-class=v] pre {
+  font-weight: bold;
+  color: #ff0000 !important;
+  text-align: center!important;
+}
+.v[data-class=v] .vsys {
+  cursor: default;
+  margin-top: -10px;
+  padding: 3px 10px!important;
+  margin-right: 8px!important;
+  transition: var(--transition);
+  border-radius: 3.5px !important;
+  background-color: var(--backard-color);
+  border: 1px solid var(--borderd-color);
+  color: var(--textard-color) !important;
+}
+.v[data-class=v] .vsys:hover {
+  color: #ffffff !important;
+  background-color: var(--dominColor);
+  border: 1px solid var(--dominColor);
+}
+.v[data-class=v] .vcount {
+  color: var(--textard-color);
+}
+.v[data-class=v] .vbtn {
+  border-radius: 5px!important;
+  border: 1px solid var(--svgfill-color) !important;
+}
+.v[data-class=v] .vicon {
+  fill: var(--svgfill-color) !important;
+}
+.v[data-class=v] .vwrap {
+  cursor: pointer!important;
+  padding: 10px 15px!important;
+  margin-bottom: 35px!important;
+  background-color: var(--backard-color);
+  border: 1px solid var(--borderd-color) !important;
+}
+.v[data-class=v] .txt-right {
+  display: none;
+}
+.v[data-class=v] .vwrap .vemojis i {
+  display: unset!important;
+}
+.v[data-class=v] .vcards .vcard .vh {
+  padding-left: 15px;
+}
+.v[data-class=v] .vrow .vcol.vcol-30 {
+  display: none;
+}
+.v[data-class=v] .vrow .vcol.vcol-70 {
+  width: 100%!important;
+}
+.v[data-class=v] .vcards .vcard .vimg {
+  border-radius: 5px!important;
+  border: 2px solid var(--svgfill-color) !important;
+}
+.v[data-class=v] .vwrap .vheader .vinput {
+  height: 45px;
+  border-bottom: 1px dashed var(--svgfill-color) !important;
+}
+.v[data-class=v] .vcards .vcard .vhead .vnick {
+  font-size: 16px!important;
+  color: var(--textard-color);
+  transition: color var(--transition);
+}
+.v[data-class=v] .vcards .vcard .vhead .vnick:hover {
+  color: var(--dominColor) !important;
+}
+.v[data-class=v] .vcards .vcard .vh .vmeta .vat {
+  color: var(--dominColor) !important;
+}

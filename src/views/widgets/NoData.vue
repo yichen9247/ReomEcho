@@ -1,8 +1,6 @@
 <script setup>
     import "./assets/NoData.css"
-    const config = defineProps({
-        description: String
-    });
+    const config = defineProps({ description: String });
 </script>
 
 <template>

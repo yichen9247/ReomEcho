@@ -125,12 +125,14 @@ export default {
     },
     style: { /**（样式） */
         /**
+         * font_style: 字体样式 [0: 默认 1:可爱体]
          * dotted_color1: 边框颜色 Type: String
          * dotted_color2: 边框颜色 Type: String
          * site_dominColor: 网站主色 Type: String
          * po_qrcode_color: 二维码颜色 Type: String
          * site_buttoColor: 按钮颜色 Type: String
          */
+        font_style: 1,
         dotted_color1: "#ff6c6c",
         dotted_color2: "#1989fa",
         site_dominColor: "#626aef",
@@ -190,23 +192,59 @@ export default {
         qqmu: { show: true, link: "#" },
         bili: { show: true, link: "#" },
     },
+    comment: { /**（评论） */
+        /**
+         * comment_styl: 评论框样式 [0: 无样式 1: 样式一,2: 样式二,3: 样式三] Type: Number
+         * comment_psiz: 每页加载的评论条数 Type: Number
+         * comment_glba: 是否全局开启评论系统 Type: Boolean
+         * valine_emoje: Vaine评论系统启用更多表情包 Type: Boolean
+         * comment_type: 评论系统 ['Valine'] Type: String
+         * valine_appid: Valine评论系统AppId Type: String
+         * valine_appkey: Valine评论系统AppKey Type: String
+         * comment_placehoter: 评论输入框占位文本 Type: String
+         */
+        comment_styl: 3,
+        comment_psiz: 10,
+        comment_glba: false,
+        valine_emoje: true,
+        comment_type: 'Valine',
+        valine_appid: '',
+        valine_appkey: '',
+        comment_placehoter: '请输入评论内容，请勿发布无意义的内容...'
+    },
     global: { /**（全局设置） */
         /**
          * cook_notice: 是否启用协议提醒小助手 Type: Boolean
+         * load_topline: 是否启用全局顶部加载条 Type: Boolean
+         * loading_icons: 网站全局全屏加载图片 Type: String
+         * image_lazyload: 是否开启全局图片懒加载 Type: String
          * site_hreflinks: 网站路径（填根路径 '/' 就行） Type: Boolean
+         * site_secproduc: 是否开启网站安全保护 Type: Boolean
+         * darkheme_toggl: 深色模式（1：自由 2：自动（每天 10:00 - 8:00））
          * backtop_button: 是否启用返回顶部按钮 Type: Boolean
+         * load_fullscreen: 是否启用全局全屏加载效果 Type: Boolean
          * dialog_draggle: 是否启用拖拽式弹窗 Type: Boolean
+         * friends_draggle: PC端友链界面是否启用友链拖动效果 Type: Boolean
+         * transt_interval: 全局动画过渡时间（ms） Type: Boolean
          * site_title: 网站名称 Type: String
          * site_address: 网站地址 Type: String
          * cookie_mb_message: 手机端Cookie提示文案 Type: String
          * cookie_pc_message: 电脑端Cookie提示文案（可用HTML） Type: String
          */
         cook_notice: true,
+        load_topline: true,
+        loading_icons: avatar,
+        image_lazyload: true,
         site_hreflinks: '/',
+        site_secproduc: true,
+        darkheme_toggl: 1,
         backtop_button: true,
+        load_fullscreen: true,
         dialog_draggle: false,
-        site_title: "网站标题",
-        site_address: "http://127.0.0.1",
+        friends_draggle: true,
+        transt_interval: "0.3s",
+        site_title: "Hua's home",
+        site_address: "http://localhost:5173",
         cookie_mb_message: "为记录访客的关键行为，我们使用Cookie技术来存储你的一些个人信息。",
         cookie_pc_message: "为记录访客的关键行为，我们使用Cookie技术来存储你的一些信息，详情请查看<a href='/pricay/'>《隐私政策》</a>"
     },

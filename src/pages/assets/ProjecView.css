@@ -1,9 +1,6 @@
 ul.project-list {
   width: 100%;
-  display: grid;
   min-height: 250px;
-  justify-content: space-between;
-  grid-template-columns: repeat(auto-fill, 400px);
 }
 ul.project-list li.project-item {
   width: 400px;
@@ -13,7 +10,7 @@ ul.project-list li.project-item {
   position: relative;
   border-radius: 8px;
   margin-bottom: 35px;
-  transition: width 0.5s;
+  transition: var(--transition);
   border: 1px solid var(--borderd-color);
 }
 ul.project-list li.project-item a.project-link {
@@ -64,8 +61,8 @@ ul.project-list li.project-item a.project-link p.project-desc {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
   margin-bottom: 0!important;
+  -webkit-box-orient: vertical;
 }
 ul.project-list li.project-item a.project-link div.project-language {
   right: 20px;
@@ -78,11 +75,8 @@ ul.project-list:has(div.have-no-data) {
   display: block;
 }
 @media (max-width: 768px) {
-  ul.project-list {
-    display: flex;
-    flex-direction: column;
-  }
   ul.project-list li.project-item {
     width: 100%;
+    margin-bottom: 0;
   }
 }

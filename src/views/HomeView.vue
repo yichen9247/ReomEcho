@@ -5,14 +5,11 @@
     import { useRouter } from 'vue-router'
     import config from "../../docs/index.js"
     import siteConfig from "../../docs/main.js"
-    import headerview from "@/views/headerview.vue"
     import hitikoview from "@/views/hitikoview.vue"
-    import footerview from "@/views/footerview.vue"
     import HomeArtic from "@/views/pages/HomeArtic.vue"
     import renderMarkdown from "../scripts/markdown.js"
     import { useReomEchoStore } from "@/stores/ReomEchoStore.js"
 
-    const loading = ref(false);
     const router = useRouter();
     const htmlContent = ref('');
     const contextshow = ref(false);
@@ -23,11 +20,13 @@
     const checkSiteHref = () => {
         let links = document.getElementsByTagName('a');
         for (var i = 0; i < links.length; i++) {
-            if (links[i].href.includes(window.location.host)) {
+            if (links[i].href.includes(location.host)) {
                 links[i].addEventListener('click',function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    router.push(new URL(this.href).pathname);
+                    router.push(new URL(this.href).pathname).then(() => {
+                        document.querySelector('#app').scrollTo(0, 0);
+                    });
                 });
             }
         };
@@ -38,9 +37,9 @@
         .then(response => response.text())  
         .then(data => toRenderMarkdown(data))  
         .catch(error => console.error('Error fetching file:', error));
-        if (ReomEchoStore.isDeviceMobilePhone) {
-            document.querySelector("#profile").addEventListener('scroll',() => {
-                if (document.querySelector("#profile").scrollTop >= 100) {
+        if (!ReomEchoStore.isDeviceMobilePhone) {
+            document.querySelector("#app").addEventListener('scroll',() => {
+                if (document.querySelector("#app").scrollTop >= 100) {
                     document.querySelector("#site-header").classList.add("active");
                 } else document.querySelector("#site-header").classList.remove("active");
             });
@@ -50,7 +49,19 @@
         },500);
         checkSiteHref();
     }
-    onMounted(() => loadMainRescoure());
+    onMounted(async () => {
+        await homeReady().then(async () => {
+            ReomEchoStore.setIsSiLodingStatus(false);
+        }).catch(async() => {
+            ElMessage({type: 'error',message: "系统功能异常！"});
+        });
+    });
+
+    const homeReady = async () => {
+        loadMainRescoure();
+        ReomEchoStore.setWindowReadyState(true);
+        ReomEchoStore.setIsHeaderBarShows(false);
+    }
 
     const scrollToMain = () => {
         const main = document.getElementById('markdown');
@@ -58,35 +69,26 @@
     }
     
     document.title = siteConfig.global.site_title;
-    const toRenderMarkdown = (data) => htmlContent.value = renderMarkdown(data);
-
-    const onRefresh = () => {
-        setTimeout(() => {
-            showToast('刷新成功');
-            loading.value = false;
-        }, 1000);
+    const toRenderMarkdown = (data) => {
+        htmlContent.value = renderMarkdown(data);
     };
 </script>
 
 <template>
     <div id="profile" :data-theme="darkTheme !== 'true' ? 'default' : 'dark'" v-if="ReomEchoStore.isDeviceMobilePhone">
-        <headerview/>
-        <van-back-top v-if="siteConfig.global.backtop_button"/>
-        <van-pull-refresh v-model="loading" @refresh="onRefresh" v-if="ReomEchoStore.isDeviceMobilePhone && siteConfig.index.index_refreshs">
+        <van-pull-refresh v-model="ReomEchoStore.refreshtilStstus" @refresh="ReomEchoStore.toggleRefreshStatus" v-if="ReomEchoStore.isDeviceMobilePhone && siteConfig.index.index_refreshs">
             <div id="markdown" class="markdown-index">
                 <div class="markdown-body">
                     <section v-html="htmlContent"></section>
                     <HomeArtic/>
                     <el-divider/>
-                    <footerview/>
                 </div>
             </div>
         </van-pull-refresh>
     </div>
 
     <div id="profile" :data-theme="darkTheme !== 'true' ? 'default' : 'dark'" v-else>
-        <headerview/>
-        <img class="cover-bg" :src="config.heaImage" v-if="siteConfig.index.index_header"/>
+        <img class="cover-bg" :src="siteConfig.header.header_image" v-if="siteConfig.index.index_header"/>
         <div id="headerfile" v-if="siteConfig.index.index_header">
             <transition name="el-fade-in-linear">
                 <div class="context-box" v-show="contextshow">
@@ -105,14 +107,12 @@
             </div>
         </div>
 
-        <div id="markdown" class="markdown-index" :style="{ marginTop: !siteConfig.index.index_header && '55px'}">
+        <div id="markdown" class="markdown-index" :style="{ marginTop: !siteConfig.index.index_header && '80px'}">
             <div class="markdown-body">
                 <section v-html="htmlContent"></section>
                 <HomeArtic/>
-                <footerview/>
             </div>
         </div>
-
     </div>
 </template>
 

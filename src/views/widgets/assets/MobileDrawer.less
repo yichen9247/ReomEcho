@@ -19,6 +19,7 @@ div.mobile-side-bar {
             font-size: 1.35rem;
             text-align: center;
             color: @domin-color;
+            transition: color var(--transition);
         }
     }
 }
@@ -35,6 +36,7 @@ div.sidebar {
     position: relative;
     overflow-y: scroll;
     background-color: @mobside-color;
+    transition: background-color var(--transition);
 
     img.side-out-image {
         top: 0;
@@ -53,6 +55,7 @@ div.sidebar {
         height: 36px;
         position: absolute;
         border-color: @borderd-color;
+        transition: var(--transition);
         background-color: @backard-color;
     }
 
@@ -86,6 +89,7 @@ div.sidebar {
                 text-overflow: ellipsis;
                 width: calc(100% - 60px);
                 margin-bottom: 0!important;
+                transition: color var(--transition);
             }
         }
     }
@@ -107,6 +111,7 @@ div.sidebar {
                 position: relative;
                 align-items: center;
                 color: @mobautd-color;
+                transition: color var(--transition);
             }
 
             div.icon-box {
@@ -123,6 +128,7 @@ div.sidebar {
             span.item-text {
                 line-height: 35px;
                 color: @asideba-color;
+                transition: color var(--transition);
             }
         }
     }
@@ -174,10 +180,12 @@ div.sidebar {
     margin-bottom: 25px;
     box-shadow: @moboxsh-color;
     background-color: @backard-color;
+    transition: background-color var(--transition);
 
     svg.aside-icon {
         path {
             fill: @asideba-color;
+            transition: fill var(--transition);
         }
     }
 }
