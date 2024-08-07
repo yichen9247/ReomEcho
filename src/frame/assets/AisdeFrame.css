@@ -190,22 +190,21 @@ div.frame-aside div.aside-card div.item-content div.aside-list div.aside-list-it
 }
 div.frame-aside div.aside-card div.item-content div.aside-list div.aside-list-item a.post-image {
   padding: 0;
-  width: 4.2em;
+  width: 100%;
   height: 4.2em;
-  display: block;
+  display: flex;
   min-width: 4.2em;
-  overflow: hidden;
-  border-radius: 5px;
-  background-color: #f7f7f9;
 }
 div.frame-aside div.aside-card div.item-content div.aside-list div.aside-list-item a.post-image img.image {
-  width: 100%;
-  height: 100%;
+  width: 4.2em;
+  height: 4.2em;
   object-fit: cover;
+  border-radius: 5px;
   margin: 0!important;
   transition: all 0.6s ease 0s;
+  background-color: #f7f7f9;
 }
-div.frame-aside div.aside-card div.item-content div.aside-list div.aside-list-item div.post-content {
+div.frame-aside div.aside-card div.item-content div.aside-list div.aside-list-item a.post-image div.post-content {
   width: 100%;
   flex: 1 1 0%;
   height: 4.2em;
@@ -213,12 +212,13 @@ div.frame-aside div.aside-card div.item-content div.aside-list div.aside-list-it
   padding-left: 10px;
   align-items: center;
 }
-div.frame-aside div.aside-card div.item-content div.aside-list div.aside-list-item div.post-content a.post-title {
+div.frame-aside div.aside-card div.item-content div.aside-list div.aside-list-item a.post-image div.post-content a.post-title {
   width: 100%;
   padding: 2px 0;
   font-weight: 100!important;
 }
-div.frame-aside div.aside-card div.item-content div.aside-list div.aside-list-item div.post-content a.post-title p {
+div.frame-aside div.aside-card div.item-content div.aside-list div.aside-list-item a.post-image div.post-content a.post-title p {
+  height: 100%;
   width: 100%;
   overflow: hidden;
   display: -webkit-box;

@@ -155,14 +155,15 @@
                         <div class="aside-list">
                             <VueDraggable v-model="leastPost" class="drag-container" :animation="300">
                                 <div class="aside-list-item" v-for="(item,index) in leastPost" v-wave="siteConfig.sundry.moused_wave" :key="index">
-                                    <a class="post-image" :href="`./docs/${item.path}`" :title="item.config.name">
-                                        <img class="image" :src="item.config.image" :alt="item.config.name">
+                                    <a class="post-image" :href="`/docs/${item.path}`" :title="item.config.name">
+                                        <img class="image" v-lazy="item.config.image" :alt="item.config.name">
+
+                                        <div class="post-content">
+                                            <a class="post-title" :href="`/docs/${item.path}`" :title="item.config.name">
+                                                <p>{{ item.config.name }}</p>
+                                            </a>
+                                        </div>
                                     </a>
-                                    <div class="post-content">
-                                        <a class="post-title" :href="`/docs/${item.path}`" :title="item.config.name">
-                                            <p>{{ item.config.name }}</p>
-                                        </a>
-                                    </div>
                                 </div>
                             </VueDraggable>
                         </div>
