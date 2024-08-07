@@ -1,0 +1,39 @@
+span.github-badge {
+  color: #ffffff;
+  font-size: 12px;
+  overflow: hidden;
+  line-height: 15px;
+  text-shadow: none;
+  border-radius: 3px;
+  display: inline-block;
+  text-shadow: 0px 0.86px 0.2px #3333336b;
+}
+span.github-badge * {
+  padding: 0;
+  color: #ffffff;
+  white-space: nowrap;
+}
+span.github-badge span.badge-subject {
+  padding: 5px;
+  display: inline-block;
+  background-color: #4d4d4d;
+}
+span.github-badge span.badge-value {
+  padding: 5px;
+  display: inline-block;
+}
+span.github-badge span.bg-blue {
+  background-color: #00a1fd;
+}
+span.github-badge span.bg-yellow {
+  background-color: #ffa500;
+}
+span.github-badge span.bg-green {
+  background-color: #3bca6e;
+}
+span.github-badge span.bg-purple {
+  background-color: #ab34e9;
+}
+span.github-badge span.bg-red {
+  background-color: #ff1010;
+}

@@ -1,0 +1,28 @@
+#veditor {
+  opacity: 0.75;
+  resize: vertical;
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0);
+  background-image: url("assets/comment2.png");
+  transition: all var(--transition) ease-in-out 0s;
+}
+#veditor:focus {
+  background-position-y: 200px;
+}
+div#twikoo textarea {
+  opacity: 0.75;
+  resize: vertical;
+  background-size: contain;
+  background-position: right;
+  background-position-x: 99%;
+  background-position-y: -5px;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0);
+  background-image: url("assets/comment2.png");
+  transition: all var(--transition) ease-in-out 0s;
+}
+div#twikoo textarea:focus {
+  background-position-y: 200px;
+}

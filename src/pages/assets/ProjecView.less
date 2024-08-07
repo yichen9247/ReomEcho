@@ -1,0 +1,152 @@
+
+@import url("../../assets/various/style.less");
+
+div.project-list {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    min-height: 250px;
+    justify-content: space-between;
+    animation: slide-in 0.6s 0.3s backwards;
+
+    div.item-container {
+        width: 49%;
+        height: 180px;
+        margin-bottom: 35px;
+    }
+
+    div.project-item {
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 5px;
+        transition: @transition;
+
+        a.project-link {
+            width: 100%;
+            height: 100%;
+            display: block;
+            padding: 0!important;
+
+            p.project-name {
+                width: 100%;
+                font-size: 24px;
+                overflow: hidden;
+                color: #ffffff;
+                text-align: center;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin-bottom: 0!important;
+            }
+    
+            div.project-info {
+                margin: 10px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                i.project-icon {
+                    width: 16px;
+                    height: 16px;
+                    margin: 0 5px;
+                    display: flex;
+    
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                        margin: auto;
+                    }
+                }
+    
+                span.info-text {
+                    font-size: 14px;
+                    color: #ffffff;
+                    line-height: 16px;
+                }
+            }
+    
+            p.project-desc {
+                width: 100%;
+                margin: 35px 0;
+                font-size: 13px;
+                overflow: hidden;
+                color: #ffffff;
+                text-align: center;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                text-overflow: ellipsis;
+                margin-bottom: 0!important;
+                -webkit-box-orient: vertical;
+            }
+
+            div.project-language {
+                right: 20px;
+                bottom: 10px;
+                font-size: 20px;
+                position: absolute;
+                color: rgba(255,255,255,0.5);
+            }
+        }
+    }
+}
+
+div.project-list:has(div.have-no-data) {
+    display: block;
+}
+
+@media (max-width: 1200px) {
+    div.project-list {
+        display: unset;
+
+        div.item-container {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+@media (max-width: 998px) {
+    div.project-list {
+        display: unset;
+
+        div.item-container {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    div.project-list {
+        display: unset;
+
+        div.item-container {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    div.project-list {
+        display: unset;
+
+        div.item-container {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    div.project-list {
+        display: unset;
+
+        div.item-container {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+    }
+}

@@ -1,0 +1,194 @@
+
+@import url("../../assets/various/style.less");
+
+div.frame-article {
+    h1.article-title {
+        width: 100%;
+        font-size: 30px;
+        font-weight: 300;
+        margin: 45px auto;
+        text-align: center;
+        margin-bottom: 40px;
+        color: @textard-color;
+    }
+
+    div.break-box {
+        width: 100%;
+        height: 40px;
+        margin: 0 auto;
+        display: flex;
+        padding: 0 15px;
+        border-radius: 5px;
+        align-items: center;
+        transition: @transition;
+        border: 2px solid @outline-color;
+
+        span.el-breadcrumb__inner {
+            display: flex;
+            align-items: center;
+            color: @textard-color;
+
+            svg {
+                margin-top: -2px;
+                margin-right: 10px;
+                transition: @transition;
+                color: @textard-color!important;
+            }
+
+
+        }
+
+        .el-breadcrumb__inner a:hover, .el-breadcrumb__inner.is-link:hover {
+            color: @domin-color;
+        }
+    }
+
+    div.article-content {
+        width: 100%;
+        overflow: hidden;
+        margin: 20px auto;
+        border-radius: 5px;
+        border: 2px solid @outline-color;
+
+        div.image-box {
+            width: 100%;
+            height: 250px;
+            cursor: pointer;
+            overflow: hidden;
+
+            img.article-image {
+                width: 100%;
+                height: 100%;
+                transition: transform @transition;
+
+                &:hover {
+                    transform: scale(1.25);
+                }
+            }
+        }
+
+        div.el-skeleton,div.van-skeleton  {
+            padding: 0;
+            width: 100%;
+            height: 250px;
+
+            div {
+                width: inherit;
+                height: inherit;
+            }
+        }
+    }
+
+    div.article-tags {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+
+        * {
+            transition: 0s!important;
+        }
+
+        span.tag {
+            cursor: pointer;
+            line-height: 35px;
+            padding: 0px 10px;
+            font-size: 0.85em;
+            border-radius: 5px;
+            color: @textard-color;
+        }
+    
+        span.tag {
+            width: fit-content;
+            margin-bottom: 15px;
+            transition: @transition;
+            background-color: @backard-color;
+            border: 2px solid @outline-color;
+        }
+    
+        span.tag {
+
+            span.tag-text {
+                display: flex;
+                position: relative;
+                align-items: center;
+    
+                &::before {
+                    content: '#';
+                    opacity: 0.4;
+                    font-size: 1rem;
+                    margin-right: 5px;
+                    position: relative;
+                    color: width @textard-color;
+                }
+            }
+    
+            &:hover {
+                color: #ffffff;
+                border: 2px solid @domin-color;
+                background-color: @domin-color;
+    
+                span.tag-text {
+                    &::before {
+                        opacity: 1;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    div.image-box {
+        width: 100%;
+        height: 200px!important;
+    }
+
+    div.el-skeleton,div.van-skeleton  {
+        padding: 0;
+        width: 100%;
+        height: 200px!important;
+
+        div {
+            width: inherit;
+            height: inherit;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    div.image-box {
+        width: 100%;
+        height: 200px!important;
+    }
+
+    div.el-skeleton,div.van-skeleton  {
+        padding: 0;
+        width: 100%;
+        height: 200px!important;
+
+        div {
+            width: inherit;
+            height: inherit;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    div.image-box {
+        width: 100%;
+        height: 200px!important;
+    }
+
+    div.el-skeleton,div.van-skeleton  {
+        padding: 0;
+        width: 100%;
+        height: 200px!important;
+
+        div {
+            width: inherit;
+            height: inherit;
+        }
+    }
+}

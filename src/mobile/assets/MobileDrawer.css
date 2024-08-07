@@ -1,0 +1,200 @@
+div.mobile-side-bar {
+  z-index: 999!important;
+}
+div.mobile-side-bar header.el-drawer__header span.el-drawer__title {
+  font-weight: 700;
+  font-size: 1.35rem;
+  text-align: center;
+  color: var(--dominColor);
+  transition: color var(--transition);
+}
+div.mobile-side-bar div.el-drawer__body {
+  padding: 0;
+}
+div.sidebar {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  overflow: hidden;
+  position: relative;
+  overflow-y: scroll;
+  background-color: var(--mobside-color);
+  transition: background-color var(--transition);
+}
+div.sidebar img.side-out-image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  position: absolute;
+}
+div.sidebar button.side-bright-button {
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  border-color: var(--outline-color);
+  background-color: var(--backard-color);
+}
+div.sidebar button.side-bright-button svg path {
+  fill: var(--textard-color) !important;
+}
+div.sidebar img.side-out-image + div {
+  margin-top: 100px;
+}
+div.sidebar .drawer-card {
+  z-index: 1;
+  width: 100%;
+  padding: 15px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  box-shadow: var(--moboxsh-color);
+  background-color: var(--backard-color);
+  transition: background-color var(--transition);
+}
+div.sidebar .drawer-card svg.aside-icon path {
+  fill: var(--asideba-color);
+  transition: fill var(--transition);
+}
+div.sidebar div.side-out-autho {
+  z-index: 1;
+  display: flex;
+}
+div.sidebar div.side-out-autho img.avatar-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+  box-shadow: var(--boxshadow);
+}
+div.sidebar div.side-out-autho div.author-infos {
+  width: 100%;
+  line-height: 25px;
+}
+div.sidebar div.side-out-autho div.author-infos p.author-desc {
+  font-size: 12px;
+  overflow: hidden;
+  padding: 0.25rem;
+  padding-bottom: 0;
+  white-space: nowrap;
+  color: var(--mobautd-color);
+  text-overflow: ellipsis;
+  width: calc(100% - 60px);
+  margin-bottom: 0!important;
+  transition: color var(--transition);
+}
+div.sidebar ul.side-out-navlist li.navlist-item {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+div.sidebar ul.side-out-navlist li.navlist-item a.item-link {
+  width: 100%;
+}
+div.sidebar ul.side-out-navlist li.navlist-item span.link-text {
+  display: flex;
+  line-height: 35px;
+  position: relative;
+  align-items: center;
+  color: var(--mobautd-color);
+  transition: color var(--transition);
+}
+div.sidebar ul.side-out-navlist li.navlist-item div.icon-box {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  margin-right: 10px;
+}
+div.sidebar ul.side-out-navlist li.navlist-item div.icon-box svg {
+  margin: auto;
+}
+div.sidebar ul.side-out-navlist li.navlist-item span.item-text {
+  line-height: 35px;
+  color: var(--asideba-color);
+  transition: color var(--transition);
+}
+div.sidebar div.side-out-footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+div.sidebar div.side-out-footer div.github-badge {
+  display: flex;
+  margin-bottom: 20px;
+}
+div.sidebar div.side-out-footer:last-child {
+  margin-bottom: 0;
+}
+div.sidebar ul.nav-list-mobile {
+  width: 100%;
+  overflow: hidden;
+  padding: 5px 15px;
+  overflow-y: scroll;
+}
+div.sidebar ul.nav-list-mobile li.nav-item {
+  width: 100%;
+  height: 32px;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: var(--transition);
+  background-color: transparent;
+}
+div.sidebar ul.nav-list-mobile li.nav-item a {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+div.sidebar ul.nav-list-mobile li.nav-item a svg.feather-code {
+  stroke-width: 2px!important;
+}
+div.sidebar ul.nav-list-mobile li.nav-item a span.item-name {
+  opacity: 0.9;
+  font-size: 15px;
+  margin-left: 10px;
+  color: var(--textard-color);
+  transition: color var(--transition);
+}
+div.sidebar ul.side-out-social {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+div.sidebar ul.side-out-social li.social-item {
+  height: 28px;
+}
+div.sidebar ul.side-out-social li.social-item a.item-link {
+  width: 28px;
+  height: 28px;
+  padding: 0!important;
+}
+div.sidebar ul.side-out-social li.social-item a.item-link svg {
+  width: 100%;
+  height: 100%;
+}
+div.side-out-music {
+  padding: 0;
+}
+div.side-out-music div.player {
+  border-radius: unset;
+}
+div.side-out-search div.van-search {
+  padding: 0;
+}
+a.author-link {
+  color: var(--dominColor);
+  transition: var(--transition);
+}
+body:has(div#Reomecho div.main-layout[data-theme="dark"]) a.author-link {
+  color: #ffffff;
+}

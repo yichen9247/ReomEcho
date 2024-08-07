@@ -1,0 +1,93 @@
+div.console-home-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+div.console-home-container table th {
+  min-width: 120px;
+}
+div.console-home-container main.el-main {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+div.console-home-container main.el-main button.ok-button {
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+div.console-home-container main.el-main div.admin-page {
+  padding: 20px;
+  padding-bottom: 60px!important;
+}
+div.console-home-container main.el-main div.el-divider__text {
+  background-color: #f7f9fe;
+}
+div.console-home-container main.el-main h4.ant-typography {
+  margin-left: 2px;
+  margin-bottom: 1em;
+  color: var(--dominColor);
+}
+div.console-home-container main.el-main div.admin-page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+div.console-home-container main.el-main div.ant-table * {
+  overflow-y: hidden!important;
+}
+div.console-home-container main.el-main div.ant-table ::-webkit-scrollbar {
+  display: block;
+}
+div.console-home-container main.el-main div.el-scrollbar {
+  height: 100%;
+}
+div.console-home-container main.el-main div.ant-table tbody.ant-table-tbody tr ::-webkit-scrollbar {
+  display: none;
+}
+div.console-home-container main.el-main table.el-table__body tbody tr.el-table__row td div.cell {
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+div.console-home-container main.el-main div.ant-table tbody.ant-table-tbody tr.ant-table-row td.ant-table-cell {
+  max-width: 400px;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+div.console-home-container ::-webkit-scrollbar {
+  display: none;
+}
+div.console-home-container table * {
+  text-align: center!important;
+}
+@media (max-width: 768px) {
+  aside.el-aside {
+    width: 0;
+  }
+  main.el-main div.admin-page {
+    padding: 20px 10px!important;
+  }
+}
+@media (max-width: 480px) {
+  aside.el-aside {
+    width: 0;
+  }
+  main.el-main div.admin-page {
+    padding: 20px 10px!important;
+  }
+}
+@media (max-width: 320px) {
+  aside.el-aside {
+    width: 0;
+  }
+  main.el-main div.admin-page {
+    padding: 20px 10px!important;
+  }
+}

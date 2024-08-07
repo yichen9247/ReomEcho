@@ -1,0 +1,148 @@
+
+div.console-login-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../image/background-02.jpg");
+}
+
+div.console-login-container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    overflow: hidden;
+    position: relative;
+
+    * {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Liberation Sans", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, SimSun, "WenQuanYi Zen Hei Sharp", sans-serif!important;
+    }
+
+    div.login-container {
+        margin: auto;
+        width: 420px;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.08),0 3px 6px -4px rgba(0, 0, 0, 0.12),0 6px 12px 6px rgba(0, 0, 0, 0.05);
+    
+        p.login-title {
+            color: #626aef;
+            line-height: 95px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.75rem;
+        }
+
+        form.login-form {
+            width: 90%;
+            margin: 10px auto;
+
+            div.el-form-item {
+                margin-bottom: 25px;
+                
+                label.el-form-item__label {
+                    display: none;
+                }
+
+                input.el-input__inner {
+                    height: 40px;
+                }
+            }
+
+            div.el-form-item.footer > div {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            button.login-button {
+                width: 100%;
+                height: 40px;
+                border: unset;
+                font-size: 16px;
+                margin-bottom: 20px;
+                background-color: #626aef;
+
+                span {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    button.ant-float-btn {
+        background-color: #626aef;
+    }
+
+    :where(.css-dev-only-do-not-override-16pw25h).ant-float-btn-primary .ant-float-btn-body {
+        background-color: #626aef;
+    }
+}
+
+:where(.css-dev-only-do-not-override-16pw25h).ant-modal .ant-modal-header {
+    margin-bottom: 15px;
+}
+
+.time-tips-root .time-tips-root-content {
+    width: 100%!important;
+}
+
+.slider-captcha-root .slider-captcha-box .slider-but-box .slider-static-but .slider-but {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.vertify-dialog {
+    width: 360px!important;
+    div.ant-modal-content {
+        padding: 20px!important;
+        padding-top: 15px!important;
+    }
+}
+
+@media (max-width: 480px) {
+    div.console-login-container {
+        div.login-container {
+            width: 100%;
+            height: 80%;
+            bottom: -100%;
+            transition: 0.5s;
+            box-shadow: unset;
+            position: absolute;
+            animation: 0.6s 0.3s loginbox forwards;
+        }
+
+        button.ant-float-btn {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    div.console-login-container {
+        div.login-container {
+            width: 100%;
+            height: 80%;
+            bottom: -100%;
+            transition: 0.5s;
+            box-shadow: unset;
+            position: absolute;
+            animation: 0.6s 0.3s loginbox forwards;
+        }
+
+        button.ant-float-btn {
+            display: none;
+        }
+    }
+}
+
+@keyframes loginbox {
+    0% {
+        bottom: -100%;
+    }
+
+    100% {
+        bottom: 0%;
+    }
+}

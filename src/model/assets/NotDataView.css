@@ -1,0 +1,31 @@
+div.markdown-body div.have-no-data {
+  border: unset;
+}
+div.have-no-data {
+  width: 100%;
+  padding: 20px 0;
+  border-radius: 5px;
+  margin-bottom: 35px;
+  padding-bottom: 5px;
+  transition: var(--transition);
+  border: 2px solid var(--outline-color);
+  background-color: var(--backard-color);
+}
+div.have-no-data div.el-empty {
+  padding: 0;
+}
+@media (max-width: 768px) {
+  div.have-no-data {
+    box-shadow: none;
+  }
+}
+@media (max-width: 380px) {
+  div.have-no-data {
+    box-shadow: none;
+  }
+}
+@media (max-width: 320px) {
+  div.have-no-data {
+    box-shadow: none;
+  }
+}

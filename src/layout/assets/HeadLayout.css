@@ -1,0 +1,88 @@
+header.layout-header {
+  display: flex;
+  align-items: center;
+}
+header.layout-header span.title-span {
+  float: left;
+  height: inherit;
+}
+header.layout-header span.title-span a.span-link {
+  padding: 0;
+  display: block;
+  line-height: 50px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-align: center;
+  color: var(--textard-color);
+  transition: var(--transition);
+  animation: zezzz 5s infinite;
+  color: rgba(255, 255, 255, 0.3);
+  background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #ffffff)) 0 0 no-repeat;
+  background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #ffffff 50%, transparent 60%, transparent 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  -webkit-background-size: 50px;
+  -moz-background-size: 50px;
+  -ms-background-size: 50px;
+  -o-background-size: 50px;
+  background-size: 50px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Liberation Sans", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, SimSun, "WenQuanYi Zen Hei Sharp", sans-serif !important;
+}
+header.layout-header span.right-span {
+  flex-grow: 1;
+  float: right;
+  height: inherit;
+  padding: 0 15px;
+}
+header.layout-header span.right-span span.button-group {
+  float: right;
+  line-height: 50px;
+}
+header.layout-header span.right-span span.button-group svg > path {
+  fill: #666666;
+}
+header.layout-header button.mobile-button {
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: none;
+  position: absolute;
+  border: none !important;
+  background-color: transparent;
+}
+header.layout-header button.mobile-left-button {
+  left: 10px;
+}
+header.layout-header button.mobile-button i.el-icon {
+  margin: auto;
+  margin-top: 5px;
+  width: 22px !important;
+  height: 22px !important;
+}
+header.layout-header button.mobile-button i.el-icon svg {
+  width: 100%;
+  height: 100%;
+}
+header.layout-header button.mobile-button i.el-icon svg path {
+  fill: var(--svgpath-color);
+}
+body:has(div#Reomecho div.main-layout[data-theme="dark"]) a.span-link {
+  color: #ffffff;
+}
+@media (max-width: 320px) {
+  button.mobile-button {
+    display: block!important;
+  }
+}
+@media (max-width: 480px) {
+  button.mobile-button {
+    display: block!important;
+  }
+}
+@media (max-width: 768px) {
+  button.mobile-button {
+    display: block!important;
+  }
+}

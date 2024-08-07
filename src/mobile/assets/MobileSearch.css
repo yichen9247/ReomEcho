@@ -1,0 +1,37 @@
+div.mobile-search-container * {
+  transition: var(--transition);
+}
+div.mobile-search-container div.van-search {
+  border-radius: 5px;
+  background: var(--primary-color);
+}
+div.mobile-search-container div.van-search i {
+  color: var(--textard-color);
+}
+div.mobile-search-container div.van-search div.van-search__content {
+  border-radius: 5px;
+  background: var(--primary-color);
+}
+div.mobile-search-container div.van-search div.van-search__content input {
+  color: var(--textard-color);
+}
+div.mobile-search-container div.search-content {
+  overflow: hidden;
+}
+div.mobile-search-container div.search-content div.content-list div.content-item {
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+}
+div.mobile-search-container div.search-content div.content-list div.content-item p {
+  margin-bottom: 0;
+}
+div.mobile-search-container div.search-content div.content-list div.content-item p.item-title {
+  color: var(--textard-color);
+}
+div.mobile-search-container div.search-content div.content-list div.content-item p.item-desc {
+  color: #999999;
+  font-size: 14px;
+  margin-top: 10px;
+}

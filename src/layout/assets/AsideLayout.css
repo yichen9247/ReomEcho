@@ -1,0 +1,132 @@
+div.aside-container {
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  border-right: 1px solid var(--outline-color);
+}
+div.aside-container div.author-box {
+  width: 100%;
+  position: relative;
+}
+div.aside-container div.author-box img.background {
+  opacity: 1;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  transition: opacity var(--transition);
+}
+div.aside-container div.author-box div.user-box {
+  z-index: 1;
+  width: 100%;
+  padding-top: 60px;
+  position: relative;
+}
+div.aside-container div.author-box div.user-box img.avatar {
+  width: 75px;
+  height: 75px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  transition: transform 1s;
+  border: 6px solid #ffffff;
+}
+div.aside-container div.author-box div.user-box img.avatar:hover {
+  transform: rotate(360deg);
+}
+div.aside-container div.author-box div.user-box a.username {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: var(--dominColor);
+}
+div.aside-container div.footer-box {
+  width: 90%;
+  bottom: 20px;
+  margin: 0 5%;
+  display: flex;
+  border-radius: 3px;
+  position: absolute;
+  transition: var(--transition);
+  background: var(--backard-color);
+  border: 2px solid var(--outline-color);
+}
+div.aside-container div.footer-box span.footer-item {
+  flex-grow: 1;
+  height: 40px;
+  cursor: pointer;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  transition: none!important;
+}
+div.aside-container div.footer-box span.footer-item span {
+  margin-top: 3px;
+  transition: none!important;
+}
+div.aside-container div.footer-box span.footer-item span svg {
+  color: var(--textard-color);
+  transition: none!important;
+}
+div.aside-container div.nav-box {
+  width: 90%;
+  flex-grow: 1;
+  margin: 0 auto;
+  margin-top: 10px;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-bottom: 20px;
+}
+div.aside-container div.nav-box ul.nav-list {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  padding-bottom: 60px;
+}
+div.aside-container div.nav-box ul.nav-list li.nav-item {
+  width: 100%;
+  height: 32px;
+  margin: 8px 0;
+  padding: 0 10px;
+  border-radius: 5px;
+  transition: var(--transition);
+  background-color: transparent;
+}
+div.aside-container div.nav-box ul.nav-list li.nav-item a {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+div.aside-container div.nav-box ul.nav-list li.nav-item a svg.feather-code {
+  stroke-width: 2px!important;
+}
+div.aside-container div.nav-box ul.nav-list li.nav-item a span.item-name {
+  opacity: 0.9;
+  font-size: 1rem;
+  margin-left: 10px;
+  color: var(--textard-color);
+}
+div.aside-container div.nav-box ul.nav-list li.nav-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+div.aside-container div.nav-box ul.nav-list li.nav-item.item-active {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+div.aside-container div.nav-box ::-webkit-scrollbar {
+  display: none;
+}
+body:has(div#Reomecho div.main-layout[data-theme="dark"]) div.aside-container a.username {
+  color: #ffffff;
+}
+body:has(div#Reomecho div.main-layout[data-theme="dark"]) div.aside-container img.background {
+  opacity: 0;
+}
+body:has(div#Reomecho div.main-layout[data-theme="dark"]) ul.nav-list > li.nav-item.item-active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+body:has(div#Reomecho div.main-layout[data-theme="dark"]) ul.nav-list > li.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}

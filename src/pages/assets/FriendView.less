@@ -1,0 +1,116 @@
+
+
+@import url("../../assets/various/style.less");
+
+div.friends-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: slide-in 0.6s 0.3s backwards;
+
+    div.friends-item {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 8px;
+        margin-bottom: 35px;
+        transition: width @transition;
+        border: 1px solid @borderd-color;
+
+        a.item-link {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: inline-block;
+            background-size: 100%;
+            background-color: #f7f7f9;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            div.item-desc {
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 64px;
+                padding: 8px 16px;
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.3);
+
+                div.text-sheet {
+                    width: 100%;
+                    height: 100%;
+                    color: #ffffff;
+
+                    p {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+
+                    p.name-text {
+                        font-size: 1rem;
+                        margin-bottom: 5px!important;
+                    }
+
+                    p.desc-text {
+                        font-size: 0.75rem;
+                        margin-bottom: 0px!important;
+                    }
+                }
+            }
+
+            &:hover {
+                background-size: 120%;
+            }
+        }
+
+        a.item-link[lazy="loaded"] {
+            transition: background-size @transition!important;
+        }
+
+        a.item-link[lazy="loading"],a.item-link[lazy="error"] {
+            background-size: cover;
+        }
+    }
+}
+
+div.friends-list.draggle {
+    display: unset;
+    div.drag-container {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(auto-fill, 200px);
+    }
+}
+
+div.friends-listmobile {
+    display: unset;
+    div.drag-container {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: repeat(auto-fill, 200px);
+    }
+}
+
+div.friends-list.no-draggle {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, 200px);
+}
+
+
+@media (max-width: 768px) {
+    div.friends-list {
+        div.friends-item {
+            width: 100%;
+        }
+    }
+
+    div.friends-list.draggle {
+        div.drag-container {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+
+@import url("../../assets/various/style.less");
+
+div.van-overlay {
+    z-index: 10!important;
+}
+
+div.van-overlay.full-screen {
+    height: 100vh;
+    display: flex;
+    background-color: @backard-color;
+
+    img.loading-icon {
+        margin: auto;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: relative;
+        animation-duration: 0.2s;
+        animation-name: loadingAction;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
+
+    div.loading-image-dot {
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        border-radius: 50%;
+        background: #6bdf8f;
+        border: 6px solid @backard-color;
+        -webkit-transform: translate(18px, 24px);
+        -moz-transform: translate(18px, 24px);
+        -o-transform: translate(18px, 24px);
+        -ms-transform: translate(18px, 24px);
+        transform: translate(18px, 24px);
+    }
+}
+
+@keyframes loadingAction {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}

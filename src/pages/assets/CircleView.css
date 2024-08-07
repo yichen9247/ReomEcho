@@ -1,0 +1,123 @@
+div.circle-statics {
+  width: 100%;
+  height: 120px;
+  border-radius: 5px;
+  margin-bottom: 35px;
+  border: 2px solid var(--outline-color);
+}
+div.circle-statics div.statics-list {
+  width: 100%;
+  height: 85px;
+  display: flex;
+}
+div.circle-statics div.statics-list div.statics-item {
+  width: 33%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+div.circle-statics div.statics-list div.statics-item p {
+  margin-bottom: 0;
+  color: var(--textard-color);
+}
+div.circle-statics div.statics-list div.statics-item p.statics-number {
+  font-size: 18px;
+  margin-top: 5px;
+  color: var(--dominColor);
+}
+div.circle-statics div.statics-update {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.circle-statics div.statics-update p.update-text {
+  opacity: 0.45;
+  font-size: 15px;
+  color: var(--textard-color);
+}
+div.circle-statics div.statics-update p.update-text span.update-time {
+  color: var(--dominColor);
+}
+ul.circle-list {
+  width: 100%;
+}
+ul.circle-list li.circle-item {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 35px;
+  border: 2px solid var(--outline-color);
+  transition: transform var(--transition);
+}
+ul.circle-list li.circle-item:active {
+  transform: scale(0.95);
+}
+ul.circle-list li.circle-item a.circle-link {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+ul.circle-list li.circle-item a.circle-link div.cover-box {
+  width: 100px;
+  height: 100%;
+  overflow: hidden;
+  min-width: 100px;
+}
+ul.circle-list li.circle-item a.circle-link div.cover-box img.circle-image {
+  width: inherit;
+  height: inherit;
+  transition: transform var(--transition);
+}
+ul.circle-list li.circle-item a.circle-link div.cover-box img.circle-image:hover {
+  transform: scale(1.15);
+}
+ul.circle-list li.circle-item a.circle-link div.circle-content {
+  flex-grow: 1;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+}
+ul.circle-list li.circle-item a.circle-link div.circle-content p {
+  margin-bottom: 0;
+}
+ul.circle-list li.circle-item a.circle-link div.circle-content p.content-footer {
+  width: 100%;
+  bottom: 10px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+}
+ul.circle-list li.circle-item a.circle-link div.circle-content p.content-footer div.footer-box {
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+}
+ul.circle-list li.circle-item a.circle-link div.circle-content p.content-footer div.footer-box * {
+  white-space: nowrap;
+}
+ul.circle-list li.circle-item a.circle-link div.circle-content p.content-footer div.footer-box svg path {
+  fill: var(--svgpath-color) !important;
+}
+ul.circle-list li.circle-item a.circle-link div.circle-content p.content-footer div.footer-box:last-child {
+  margin-right: 0;
+}
+ul.circle-list li.circle-item a.circle-link div.circle-content p.content-footer div.footer-box span.footer-text {
+  margin-left: 5px;
+  color: var(--svgpath-color);
+}
+div.load-more-circle {
+  display: flex;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+body:has(div#Reomecho div.main-layout[data-theme="dark"]) div.circle-content p.circle-title {
+  color: #ffffff;
+}

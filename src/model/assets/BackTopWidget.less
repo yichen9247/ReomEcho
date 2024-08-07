@@ -1,0 +1,44 @@
+
+button#widget-to-top {
+    opacity: 1;
+    z-index: 9;
+    width: 70px;
+    top: -999px;
+    right: 17px;
+    border: none;
+    height: 800px;
+    display: block;
+    max-height: 80%;
+    position: fixed;
+    cursor: pointer;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    transition: all 0.5s ease-in-out!important;
+    background-image: url("../icons/widget.png");
+}
+
+button#widget-to-top.active {
+    top: 0;
+}
+
+
+@media (max-width: 768px) {
+    button#widget-to-top {
+        display: none;
+    }
+}
+
+
+@media (max-width: 480px) {
+    button#widget-to-top {
+        display: none;
+    }
+}
+
+
+@media (max-width: 320px) {
+    button#widget-to-top {
+        display: none;
+    }
+}

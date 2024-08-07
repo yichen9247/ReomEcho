@@ -1,0 +1,265 @@
+div.comment-model {
+  width: 100%;
+  margin-top: 30px;
+  margin: 20px auto;
+  margin-bottom: 80px;
+}
+div#twikoo.twikoo * {
+  color: var(--textard-color);
+  transition: var(--transition);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Liberation Sans", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, SimSun, "WenQuanYi Zen Hei Sharp", sans-serif !important;
+}
+div#twikoo.twikoo a {
+  text-decoration: none;
+}
+div#twikoo.twikoo svg path {
+  fill: var(--dominColor);
+}
+div#twikoo.twikoo div.tk-footer {
+  display: none;
+}
+div#twikoo.twikoo div.tk-admin-container * {
+  color: #ffffff;
+}
+div#twikoo.twikoo div.tk-admin-container input {
+  height: 38px;
+  border-color: #ffffff;
+}
+div#twikoo.twikoo div.tk-admin-container svg path {
+  fill: #ffffff;
+}
+div#twikoo.twikoo div.tk-admin-container div.tk-login button.el-button {
+  height: 100%;
+}
+div#twikoo.twikoo div.tk-admin-container div.tk-admin-config button.el-button {
+  width: 100px;
+  height: 35px;
+}
+div#twikoo.twikoo div.tk-admin-container div.tk-admin-warn {
+  margin-top: 10px;
+}
+div#twikoo.twikoo div.tk-admin-container div.tk-admin-warn p {
+  color: #6b5900;
+}
+div#twikoo.twikoo div.tk-admin-container div.tk-admin-export button.el-button {
+  height: 45px;
+}
+div#twikoo.twikoo div.tk-admin-container div.tk-admin-import select {
+  height: 45px;
+  border-radius: 3px;
+  padding-left: 10px;
+  background-color: transparent;
+}
+div#twikoo.twikoo div.tk-admin-container div.tk-admin-import select option {
+  color: #000000;
+}
+div#twikoo.twikoo div.tk-admin-container div.tk-admin-import button.el-button {
+  height: 45px;
+  margin: 20px 0;
+}
+div#twikoo.twikoo div.tk-admin-container div.tk-admin-import div.el-textarea textarea.el-textarea__inner {
+  padding: 15px;
+  background-image: unset;
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-avatar {
+  display: none;
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-avatar.tk-has-avatar {
+  display: none;
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-meta-input {
+  margin-bottom: 15px;
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-meta-input div.el-input {
+  height: 45px;
+  min-height: 45px;
+  border-radius: 3px;
+  border: 2px solid var(--outline-color);
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-meta-input div.el-input:has(input.el-input__inner:focus) {
+  border-color: var(--dominColor);
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-meta-input div.el-input:has(input.el-input__inner:focus) * {
+  color: var(--dominColor);
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-meta-input div.el-input:has(input.el-input__inner:focus) div.el-input-group__prepend {
+  background-color: unset;
+  border-color: var(--dominColor);
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-meta-input div.el-input div.el-input-group__prepend {
+  border: unset;
+  box-shadow: unset;
+  border-top-left-radius: unset;
+  border-bottom-left-radius: unset;
+  border-right: 2px solid var(--outline-color);
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-meta-input div.el-input input.el-input__inner {
+  height: 100%;
+  border: unset;
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-input.el-textarea {
+  margin-bottom: 10px;
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-input.el-textarea textarea.el-textarea__inner {
+  padding: 15px;
+  box-shadow: unset;
+  height: 100px!important;
+  border: 2px solid var(--outline-color);
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-input.el-textarea textarea.el-textarea__inner:focus {
+  border-color: var(--dominColor);
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-input.el-textarea:has(textarea.el-textarea__inner:focus) span.el-input__count {
+  color: var(--dominColor);
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row div.tk-col div.tk-input.el-textarea span.el-input__count {
+  right: 10px;
+  bottom: 10px;
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row.actions {
+  margin-left: unset;
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row.actions a.tk-submit-action-icon.__markdown {
+  display: none;
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row.actions button.el-button {
+  width: 75px;
+  height: 35px;
+  border: 2px solid var(--dominColor);
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row.actions button.el-button span {
+  color: var(--dominColor);
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row.actions button.el-button.tk-send {
+  background-color: var(--dominColor);
+}
+div#twikoo.twikoo div.tk-comments div.tk-submit div.tk-row.actions button.el-button.tk-send span {
+  color: #ffffff;
+}
+div#twikoo.twikoo div.tk-comments div.tk-comments-container div.tk-comment {
+  margin-bottom: 20px;
+}
+div#twikoo.twikoo div.tk-comments div.tk-comments-container div.tk-comment div.tk-avatar {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 5px;
+}
+div#twikoo.twikoo div.tk-comments div.tk-comments-container div.tk-comment div.tk-avatar img.tk-avatar-img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  border: 2px solid var(--outline-color);
+}
+div#twikoo.twikoo div.tk-comments div.tk-comments-container div.tk-comment div.tk-main div.tk-row strong.tk-nick {
+  font-weight: bold;
+  color: var(--dominColor);
+}
+div#twikoo.twikoo div.tk-comments div.tk-comments-container div.tk-comment div.tk-main div.tk-row span.tk-tag {
+  margin: 0 10px;
+}
+div#twikoo.twikoo div.tk-comments div.tk-comments-container div.tk-comment div.tk-main div.tk-row span.tk-tag.tk-tag-green {
+  color: #67c23a;
+}
+div#twikoo.twikoo div.tk-comments div.tk-comments-container div.tk-comment div.tk-main div.tk-row span.tk-tag.tk-tag-yellow {
+  color: #e6a23c;
+}
+div#twikoo.twikoo div.tk-comments div.tk-comments-container div.tk-comment div.tk-main div.tk-row span.tk-tag + span.tk-tag {
+  margin-left: 0;
+}
+div#twikoo.twikoo div.tk-comments div.tk-comments-container div.tk-comment div.tk-main div.tk-content {
+  margin-bottom: 15px;
+}
+div#twikoo.twikoo div.tk-comments div.tk-comments-container div.tk-comment div.tk-main div.tk-extras div.tk-extra span.tk-icon.__comment {
+  margin-right: 5px;
+}
+div.wl-comment * {
+  transition: var(--transition) !important;
+}
+div.wl-comment svg {
+  color: var(--svgpath-color);
+}
+div.wl-comment div.wl-panel {
+  margin: 0;
+  border-radius: 5px;
+  background: var(--backard-color);
+  border: 2px solid var(--outline-color);
+}
+div.wl-comment div.wl-panel div.wl-actions a:first-child {
+  display: none;
+}
+div.wl-comment div.wl-panel div.wl-header label {
+  font-size: 15px;
+  color: var(--textard-color);
+}
+div.wl-comment div.wl-panel .wl-editor {
+  margin: 1rem;
+  width: calc(100% - 2rem);
+}
+div.wl-comment div.wl-panel .wl-input,
+div.wl-comment div.wl-panel textarea {
+  color: var(--textard-color);
+  background: var(--backard-color);
+}
+div.wl-comment div.wl-panel textarea::placeholder {
+  color: var(--textard-color);
+}
+div.wl-comment div.wl-panel .wl-input::placeholder {
+  color: var(--textard-color);
+}
+div.wl-comment .wl-btn {
+  border-radius: 3px;
+  color: var(--textard-color);
+  transition: var(--transition) !important;
+}
+div.wl-comment .wl-btn:hover {
+  color: var(--dominColor);
+  border-color: var(--dominColor);
+}
+div.wl-comment .wl-btn.primary {
+  color: #ffffff;
+  background: var(--dominColor);
+  border-color: var(--dominColor);
+}
+.wl-power {
+  display: none;
+}
+.wl-meta-head {
+  color: var(--textard-color);
+  padding: 0.375rem 0 !important;
+}
+.wl-operation button {
+  border-radius: 3px;
+  color: var(--textard-color);
+  transition: var(--transition) !important;
+}
+.wl-operation button:hover {
+  color: var(--dominColor);
+  border-color: var(--dominColor);
+}
+.wl-reaction-title {
+  color: var(--textard-color);
+}
+.wl-sort li.active {
+  color: var(--dominColor) !important;
+}
+@media (max-width: 320px) {
+  small.tk-time,
+  div.tk-extras,
+  span.tk-tag {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  small.tk-time,
+  div.tk-extras,
+  span.tk-tag {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  small.tk-time,
+  div.tk-extras,
+  span.tk-tag {
+    display: none;
+  }
+}

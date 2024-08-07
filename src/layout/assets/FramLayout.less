@@ -1,0 +1,100 @@
+
+div.frame-containers {
+    width: 100%;
+    height: auto;
+    display: flex;
+    position: relative;
+
+    div.frame {
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+    }
+
+    div.frame.frame-aside {
+        width: 240px;
+        padding-left: 0;
+    }
+
+    div.frame.frame-main {
+        padding: 0 25px;
+        width: calc(100% - 240px);
+
+        div.frame-container {
+            animation: 0.3s frame-load forwards;
+        }
+    }
+}
+
+@keyframes frame-load {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+@media (max-width: 992px) and (min-width: 768px){
+    div.frame.frame-main {
+        width: 100%!important;
+    }
+
+    div.frame.frame-aside {
+        display: none!important;
+    }
+}
+
+@media (min-width: 1700px) {
+    div.frame.frame-aside {
+        width: 280px!important;
+    }
+
+    div.frame.frame-main {
+        width: calc(100% - 280px);
+    }
+}
+
+@media (min-width: 2048px) {
+    div.frame.frame-aside {
+        width: 320px!important;
+    }
+
+    div.frame.frame-main {
+        width: calc(100% - 320px);
+    }
+}
+
+@media (max-width: 320px) {
+    div.frame.frame-main {
+        width: 100%!important;
+    }
+
+    div.frame.frame-aside {
+        display: none!important;
+    }
+}
+
+@media (max-width: 480px) {
+    div.frame.frame-main {
+        width: 100%!important;
+    }
+
+    div.frame.frame-aside {
+        display: none!important;
+    }
+}
+
+@media (max-width: 768px) {
+    div.frame.frame-main {
+        width: 100%!important;
+    }
+
+    div.frame.frame-aside {
+        display: none!important;
+    }
+}

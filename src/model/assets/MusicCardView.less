@@ -1,0 +1,109 @@
+
+@import url("../../assets/various/style.less");
+
+div.player {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 3px;
+
+    div.disk_img {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        background-color: #f7f7f9;
+
+        img.disk-bg {
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            margin: 0!important;
+            transition: @transition;
+            filter: brightness(1) contrast(1.2);
+        }
+
+        div.control-box {
+            width: 100%;
+            height: 52px;
+            z-index: 1;
+            margin: auto;
+            display: flex;
+            
+            div.control-btn {
+                flex: 1;
+                width: 52px;
+                height: 52px;
+                display: flex;
+                overflow: hidden;
+                transform: translateY(5px);
+
+                svg {
+                    width: 100%;
+                    margin: auto;
+                    cursor: pointer;
+                    transition: @transition ease!important;
+                }
+            }
+        }
+    }
+
+    div.player_control {
+        width: 100%;
+        height: 35px;
+        overflow: hidden;
+        background-color: @butto-color;
+
+        div.lyricBox {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            div.lyricStyle {
+                overflow: hidden;
+            }
+
+            p {
+                width: 100%;
+                overflow: hidden;
+                color: #ffffff;
+                line-height: 35px;
+                text-align: center;
+                position: relative;
+                white-space: nowrap;
+            }
+
+            p.active {
+                animation: removelyric 0.3s forwards ease-in-out;
+            }
+        }
+    }
+}
+
+div.music-loading {
+    width: 100%;
+    height: 152px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: @backard-color;
+}
+
+div.el-popper div.player {
+    border-radius: 5px;
+}
+
+@keyframes removelyric {
+    10% {
+        transform: translateY(-10px);
+    }
+    80% {
+        transform: translateY(-100%);
+    }
+    100% {
+        display: none;
+        transform: translateY(-100%);
+    }
+}
