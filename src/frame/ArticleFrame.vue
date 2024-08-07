@@ -13,6 +13,8 @@
     import CommentView from "@/model/CommentView.vue"
     import SiteNotFounds from '@/model/SiteNotFounds.vue'
     import renderMarkdown from "@/scripts/markdown.min.js"
+    
+    let filePath = undefined;
 
     const Swal = utils.Swal;
     const postWords = ref(0);
@@ -32,7 +34,6 @@
     const ReomEchoStore = utils.useReomEchoStore();
     const PostsEchoStore = utils.usePostsEchoStore();
     const defaultQrCodeColor = ref(siteConfig.style.po_qrcode_color);
-    let filePath = '../../../docs/' +  route.params.alias + '/README.md';
 
     try {
         config.value = siteConfig.actives.find(item => item.path == route.params.alias).config;
@@ -170,7 +171,8 @@
         if (siteConfig.post.post_copynoti) utils.readUserCopyOption();
     }
 
-    onMounted(async () => {
+    const renderArticle = async () => {
+        filePath = '../../../docs/' +  route.params.alias + '/README.md';
         if (config.value !== undefined) {
             if (config.value.lock) {
                 await toUnlockArticle();
@@ -182,9 +184,14 @@
                 config.value = undefined;
             }
         }
+    }
+    onMounted(async () => await renderArticle());
+    
+    watch(() => route.path,async () => {
+        config.value = siteConfig.actives.find(item => item.path == route.params.alias).config;
+        await renderArticle();
     });
     const printfArticlePost = async () => Print('.article-content', {});
-    watch(() => route.path,async () => config.value = siteConfig.actives.find(item => item.path == route.params.alias).config);
 </script>
 
 <template>
