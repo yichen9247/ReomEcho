@@ -17,6 +17,7 @@ div.frame-containers div.frame.frame-aside {
 div.frame-containers div.frame.frame-main {
   padding: 0 25px;
   width: calc(100% - 240px);
+  min-height: calc(100vh - 50px);
 }
 div.frame-containers div.frame.frame-main div.frame-container {
   animation: 0.3s frame-load forwards;
