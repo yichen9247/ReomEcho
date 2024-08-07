@@ -4,10 +4,10 @@
     import Pace from 'pace-js'
     import "@/scripts/prints.min.js"
     import Icons from 'feather-icons'
-    import { ref, onMounted } from 'vue'
     import { useRoute } from "vue-router"
     import { useTitle } from 'vue-hooks-plus'
     import utils from "@/scripts/utils.min.js"
+    import { ref, onMounted, watch } from 'vue'
     import ArticleFoot from "@/model/ArticleFoot.vue"
     import NotDataView from "@/model/NotDataView.vue"
     import CommentView from "@/model/CommentView.vue"
@@ -184,6 +184,7 @@
         }
     });
     const printfArticlePost = async () => Print('.article-content', {});
+    watch(() => route.path,async () => config.value = siteConfig.actives.find(item => item.path == route.params.alias).config);
 </script>
 
 <template>

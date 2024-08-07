@@ -21,9 +21,11 @@ const checkSiteHref = async () => {
         if (link.href.includes(location.host)) {
             link.addEventListener("click",(e) => {
                 e.preventDefault();
-                createRoutes.push(new URL(link.href).pathname).then(() => ReomEchoStore.resetSitePathName()).then(() => ReomEchoStore.resizeWindowInitConfig()).then(() => {
-                    document.querySelector("#Reomecho").scrollTo(0, 0);
-                }).catch((error) => {
+                createRoutes.push(new URL(link.href).pathname).then(() => {
+					ReomEchoStore.resetSitePathName();
+					ReomEchoStore.resizeWindowInitConfig();
+					document.querySelector("#Reomecho").scrollTo(0, 0);
+				}).catch((error) => {
                     ElMessage({
                         type: "error",
                         message: "系统功能异常：" + error.message,
