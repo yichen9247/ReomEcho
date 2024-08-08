@@ -394,9 +394,11 @@ export default {
     depoly: { /**（部署设置） */
         /**
          * method: 部署方式['Vercel', 'Server', 'Location', 'Other'] Type: String
+         * Analytics: 是否启用Analytics Type: Boolean，详情见：https://vercel.com/docs/analytics/quickstart#add-the-analytics-component-to-your-app
          * SpeedInsights: 是否启用VercelSpeedInsights Type: Boolean，详情见：https://vercel.com/docs/speed-insights/quickstart#add-the-speedinsights-component-to-your-app
          */
         method: 'Vercel',
+        Analytics: true,
         SpeedInsights: true,
     },
     system: { /**（系统设置） */
